@@ -14,6 +14,6 @@
 
   }
 
-  new Slider();
+  //new Slider();
 
 } )();

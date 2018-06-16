@@ -6,7 +6,7 @@ let debug = require('debug')('testapp:server');
 
 // default http localhost
 // requires sudo
-const port = 80;
+const port = 8000;
 
 app.set('port', port);
 

@@ -90,7 +90,7 @@
   };
 
   $ ( document ).ready( function() {
-    animate_badge();
+    //animate_badge();
   } );
 
 } )( jQuery );
