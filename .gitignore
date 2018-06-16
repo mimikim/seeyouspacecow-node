@@ -1,6 +1,9 @@
 node_modules
 .idea
 .DS_Store
-public
+public/css
+public/img
+public/js
+public/svg
 app/src/vendor
 .sass-cache

@@ -1,4 +1,4 @@
 @mixin starry-bg( $bgattrs: 0 0, $radialposition: center, $highlight: #273063, $shadow: $black ) {
-  background: url('../images/bg-stars-white-transparent.png') $bgattrs, radial-gradient(ellipse at $radialposition, $highlight 0%, $shadow 100%);
+  background: url('../img/bg-stars-white-transparent.png') $bgattrs, radial-gradient(ellipse at $radialposition, $highlight 0%, $shadow 100%);
   background-attachment: fixed;
 }

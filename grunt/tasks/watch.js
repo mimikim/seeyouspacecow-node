@@ -10,5 +10,9 @@ module.exports = {
   svg: {
     files: [ 'app/src/svg/**' ],
     tasks: [ 'svgmin', 'postcss' ]
+  },
+  img: {
+    files: [ 'app/src/img/**' ],
+    tasks: [ 'imagemin' ]
   }
 };

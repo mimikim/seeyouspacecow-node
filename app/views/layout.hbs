@@ -1,13 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>{{title}}</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="favicon.png" />
   <link rel="stylesheet" href="/css/style.css" />
+  {{#if hasStyle}}<link rel="stylesheet" href="/css/{{class}}.css" />{{/if}}
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" class="{{class}}">
 {{> head}}
-{{{body}}}
-<script src="/js/vendor.min.js"></script>
-<script src="/js/scripts.min.js"></script>
+<main class="site-main" id="js-main" role="main" itemscope itemprop="mainContentOfPage">
+  {{{body}}}
+</main>
+{{> footer }}
+<script src="/js/vendor.js"></script>
+<script src="/js/scripts.js"></script>
+{{#if hasScript}}<script src="/js/{{class}}.js"></script>{{/if}}
 </body>
 </html>

@@ -4,9 +4,9 @@ module.exports = {
   dynamic: {
     files: [ {
       expand: true,
-      cwd: urls.image.src,
-      src: [ '*.{png,jpg,gif}' ],
-      dest: urls.image.dist
+      cwd: urls.img.src,
+      src: [ '**/*.{png,jpg,gif}' ],
+      dest: urls.img.dist
     } ]
   }
 };

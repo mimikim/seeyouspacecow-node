@@ -1,6 +1,21 @@
 .site-footer {
   padding: 30px 30px 40px;
-  text-align: right;
+  text-align: center;
+
+  @media( min-width: $medium ) {
+    text-align: right;
+  }
+
+  body.home & {
+    bottom: 0;
+    position: absolute;
+    right: 0;
+    width: 100%;
+
+    @media( min-width: $medium ) {
+      width: inherit;
+    }
+  }
 }
 
 .social-links {
@@ -20,10 +35,14 @@
 
   a {
     color: $white;
-    font-size: 30px;
+    font-size: 26px;
     letter-spacing: 1px;
     display: block;
     position: relative;
     text-decoration: none;
+
+    body.home & {
+      font-size: 20px;
+    }
   }
 }

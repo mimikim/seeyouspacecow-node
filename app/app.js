@@ -19,6 +19,11 @@ app.set('view engine', 'hbs');
 
 var hbs = require('hbs');
 hbs.registerPartial( 'head', fs.readFileSync(path.join(__dirname, './views/head.hbs'), 'utf8') );
+hbs.registerPartial( 'footer', fs.readFileSync(path.join(__dirname, './views/footer.hbs'), 'utf8') );
+
+hbs.registerHelper('renderSVG', function() {
+
+});
 
 app.use(logger('dev'));
 app.use(express.json());

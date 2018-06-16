@@ -29,6 +29,10 @@ vendor packages managed with bower
 
 this is a test migration to node (from php) as my primary backend language, see how it goes
 
+(tunnel-agent is installed because the version loaded by grunt-contrib-imagemin is older, and there are some security vulnerabilities with the older version)
+
 #### TODO:
 
 integrate database calls to generate content server-side
+
+each page has its own respective js and css files, apart from globals

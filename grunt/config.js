@@ -38,9 +38,9 @@ module.exports = {
     dist: distPath + "js/"
   },
 
-  image: {
-    src: srcPath + "images/",
-    dist: distPath + "images/"
+  img: {
+    src: srcPath + "img/",
+    dist: distPath + "img/"
   },
 
   svg: {

@@ -4,7 +4,9 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('contact', {
     title: 'Contact Mimi Kim, Web Developer',
-    class: 'contact'
+    class: 'contact',
+    hasScript: true,
+    hasStyle: true
   });
 });
 

@@ -1,6 +1,12 @@
 const urls = require('../config');
-const destination = urls.js.dist + 'scripts.min.js';
-const vendorDestination =  urls.js.dist + 'vendor.min.js';
+const destination = urls.js.dist + 'scripts.js';
+const vendorDestination =  urls.js.dist + 'vendor.js';
+
+const index = urls.js.dist + 'home.js';
+const about = urls.js.dist + 'about.js';
+const blog = urls.js.dist + 'blog.js';
+const contact = urls.js.dist + 'contact.js';
+const portfolio = urls.js.dist + 'portfolio.js';
 
 const options = {
   all: {
@@ -9,7 +15,12 @@ const options = {
 };
 
 // minify both script and vendor files
-options.all.files[destination] =  urls.js.dist + 'scripts.js';
-options.all.files[vendorDestination] =  urls.js.dist + 'vendor.js';
+options.all.files[destination] = destination;
+options.all.files[vendorDestination] = vendorDestination;
+options.all.files[index] = index;
+options.all.files[about] = about;
+options.all.files[blog] = blog;
+options.all.files[contact] = contact;
+options.all.files[portfolio] = portfolio;
 
 module.exports = options;
