@@ -3,7 +3,7 @@ const destination = urls.css.dist + 'style.css';
 const source = urls.css.src + 'style.scss';
 
 const indexDist = urls.css.dist + 'home.css';
-const indexSrc = urls.css.src + 'index.scss';
+const indexSrc = urls.css.src + 'home.scss';
 
 const aboutDist = urls.css.dist + 'about.css';
 const aboutSrc = urls.css.src + 'about.scss';

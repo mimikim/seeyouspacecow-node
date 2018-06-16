@@ -10,12 +10,15 @@
   {{#if hasStyle}}<link rel="stylesheet" href="/css/{{class}}.css" />{{/if}}
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" class="{{class}}">
+
 {{> head}}
+
 <main class="site-main" id="js-main" role="main" itemscope itemprop="mainContentOfPage">
   {{{body}}}
 </main>
+
 {{> footer }}
-<script src="/js/vendor.js"></script>
+
 <script src="/js/global.js"></script>
 {{#if hasScript}}<script src="/js/{{class}}.js"></script>{{/if}}
 </body>

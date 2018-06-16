@@ -15,7 +15,7 @@ module.exports = function(grunt) {
   grunt.initConfig( require('./grunt')(tasks) );
 
   grunt.registerTask( 'css', [ 'sass', 'postcss' ] );
-  grunt.registerTask( 'js', [ 'concat', 'browserify', 'babel', 'uglify' ] );
+  grunt.registerTask( 'js', [ 'browserify', 'babel', 'uglify' ] );
   grunt.registerTask( 'img', [ 'imagemin', 'svgmin' ] );
   grunt.registerTask( 'default', [ 'img', 'css', 'js' ] );
 };

@@ -17,13 +17,12 @@ var app = express();
 app.set('views', path.join(__dirname, './views'));
 app.set('view engine', 'hbs');
 
+// register partials
 var hbs = require('hbs');
 hbs.registerPartial( 'head', fs.readFileSync(path.join(__dirname, './views/head.hbs'), 'utf8') );
 hbs.registerPartial( 'footer', fs.readFileSync(path.join(__dirname, './views/footer.hbs'), 'utf8') );
 
-hbs.registerHelper('renderSVG', function() {
-
-});
+hbs.registerHelper('renderSVG', function() {});
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -31,6 +30,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 
+// sets routes
 app.use('/', indexRouter);
 app.use('/index', indexRouter);
 app.use('/index.html', indexRouter);

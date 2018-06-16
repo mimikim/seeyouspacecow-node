@@ -1,6 +1,6 @@
 // vendors
-//@import '../vendor/normalize-css/normalize.css';
-@import '../vendor/slick-carousel/slick/slick.scss';
+@import '../vendor/normalize-css/normalize.css';
+//@import '../vendor/slick-carousel/slick/slick.scss';
 
 // globals
 @import 'global/fonts';
@@ -15,6 +15,9 @@
 @import 'templates/base';
 @import 'templates/frontpage';
 @import 'templates/portfolio';
+@import 'templates/about';
+@import 'templates/contact';
+@import 'templates/blog';
 
 // components
 @import 'components/buttons';

@@ -3,6 +3,8 @@
 
 'use strict';
 
+import anime from '../../vendor/animejs/anime';
+
 export class Cow {
   constructor() {
     this.face();

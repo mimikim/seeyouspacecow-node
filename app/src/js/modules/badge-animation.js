@@ -1,6 +1,10 @@
 // trek badge and cards animation
 // using jquery for anime.js library
 
+'use strict';
+
+import anime from '../../vendor/animejs/anime';
+
 export class Badge {
   constructor() {
     this.init();
