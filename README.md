@@ -17,7 +17,7 @@ es6 js, postcss, nodejs, express, handlebars, grunt, bower
 
 site will be accessible at `http://localhost` 
 
-the server runs on port 80
+the server runs on port 8000
 
 node files are all inside `/app`, and so are all asset source files
 
