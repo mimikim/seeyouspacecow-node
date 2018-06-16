@@ -5,7 +5,7 @@ module.exports = {
   },
   js: {
     files: [ 'app/src/js/**' ],
-    tasks: [ 'javascript' ]
+    tasks: [ 'js' ]
   },
   svg: {
     files: [ 'app/src/svg/**' ],

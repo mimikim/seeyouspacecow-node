@@ -2,6 +2,7 @@ const url = require('../config');
 module.exports = {
   options: {
     plugins: [
+      { cleanupIDs: false },
       { removeViewBox: false },
       { removeUselessStrokeAndFill: true }
     ]

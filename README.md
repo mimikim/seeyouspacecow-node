@@ -27,6 +27,8 @@ development is compiled with grunt tasks, which are defined inside the `/grunt` 
 
 vendor packages managed with bower
 
+this is a test migration to node (from php) as my primary backend language, see how it goes
+
 #### TODO:
 
 integrate database calls to generate content server-side

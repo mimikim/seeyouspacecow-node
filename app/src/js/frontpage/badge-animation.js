@@ -6,26 +6,9 @@
   let body = document.body,
     header = document.getElementById('js-header');
 
-  if (!body.classList.contains('home')) {
+  if (!body.classList.contains('about')) {
     return false;
   }
-
-  let scroll_watcher = () => {
-    // launch animation when second section is about 30-40% of the screen
-
-    const first_section = document.querySelector( '#js-fullpage-container .section.first' );
-
-    // on page load, calculate offset from second section to top of page
-
-
-    // on scroll, detect offset from fixed header (top)
-    window.onscroll = () => {
-
-      // calculate offset
-
-    };
-
-  };
 
   let animate_badge = () => {
     let badge = document.querySelector( '#space-trek #Badge' );
@@ -90,7 +73,7 @@
   };
 
   $ ( document ).ready( function() {
-    //animate_badge();
+    animate_badge();
   } );
 
 } )( jQuery );
