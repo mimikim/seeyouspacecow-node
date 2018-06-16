@@ -1,9 +1,10 @@
-node_modules
 .idea
 .DS_Store
+.sass-cache
+node_modules
 public/css
 public/img
 public/js
 public/svg
 app/src/vendor
-.sass-cache
+app/src/img/portfolio
