@@ -27,8 +27,6 @@ development is compiled with grunt tasks, which are defined inside the `/grunt` 
 
 vendor packages managed with bower
 
-i am using grunt for a change instead of my usual build with gulp because as of this writing, gulp (v3.9.1) and gulp-sass are throwing security vulnerabilities in their dependencies
-
 #### TODO:
 
 integrate database calls to generate content server-side

@@ -39,7 +39,7 @@ module.exports = {
   },
 
   image: {
-    src: srcPath + "images/**",
+    src: srcPath + "images/",
     dist: distPath + "images/"
   },
 
