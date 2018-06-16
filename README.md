@@ -11,7 +11,7 @@ es6 js, postcss, nodejs, express, handlebars, grunt, bower
 
 `gulp`
 
-`npm start` (this command runs `sudo node index`)
+`npm start`
 
 #### Notes:
 
