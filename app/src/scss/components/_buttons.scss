@@ -1,0 +1,49 @@
+.button {
+  border: 8px solid $black;
+  border-radius: 30px;
+  box-shadow: inset 6px -10px 0 1px rgba( $black, 0.3 ), inset -8px 8px 0 1px rgba( #ffffff, 0.5 );
+  color: $black;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 30px;
+  position: relative;
+  text-decoration: none;
+  transition: letter-spacing 0.2s, box-shadow 0.2s;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: $black;
+  }
+
+  &:active {
+    top: 4px;
+    box-shadow: inset 1px -1px 0 1px rgba( $black, 0.5 ), inset -8px 8px 0 1px rgba( #ffffff, 0.8 );
+  }
+
+  &:focus,
+  &:hover {
+    box-shadow: inset 2px -4px 0 1px rgba( $black, 0.5 ), inset -4px 4px 0 1px rgba( #ffffff, 0.8 );
+  }
+
+  &.red {
+    background: $red-shirt;
+  }
+
+  &.blue {
+    background: $blue-shirt;
+  }
+
+  &.gold {
+    background: $gold-shirt;
+  }
+
+  &.medium-padding {
+    border-radius: 20px;
+    padding: 20px 30px;
+  }
+
+}
+
