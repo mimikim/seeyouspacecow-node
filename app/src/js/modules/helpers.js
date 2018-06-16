@@ -1,4 +1,11 @@
-// general js for all pages
+
+export class Helpers {
+  constructor() {}
+
+
+}
+
+
 ( () => {
   "use strict";
 

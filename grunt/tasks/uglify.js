@@ -1,5 +1,5 @@
 const urls = require('../config');
-const destination = urls.js.dist + 'scripts.js';
+const destination = urls.js.dist + 'global.js';
 const vendorDestination =  urls.js.dist + 'vendor.js';
 
 const index = urls.js.dist + 'home.js';

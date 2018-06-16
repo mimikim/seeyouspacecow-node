@@ -1,21 +1,16 @@
 // trek badge and cards animation
 // using jquery for anime.js library
-( ( $ ) => {
-  "use strict";
 
-  let body = document.body,
-    header = document.getElementById('js-header');
-
-  if (!body.classList.contains('about')) {
-    return false;
+export class Badge {
+  constructor() {
+    this.init();
   }
 
-  let animate_badge = () => {
+  init = () => {
     let badge = document.querySelector( '#space-trek #Badge' );
     let timeline = anime.timeline();
 
     anime.timeline().add( [
-
       {
         targets: '.card-container .card',
         translateY: [ -150, 0 ],
@@ -64,16 +59,11 @@
           }, 1250 );
         }
       }, {
-      targets: document.getElementById( 'space-trek' ),
+        targets: document.getElementById( 'space-trek' ),
         easing: 'linear',
         rotateY: [ 0, 360, 0 ],
         duration: 500
       }
     ] );
   };
-
-  $ ( document ).ready( function() {
-    animate_badge();
-  } );
-
-} )( jQuery );
+}

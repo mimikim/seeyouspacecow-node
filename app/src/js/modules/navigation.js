@@ -1,59 +1,65 @@
 'use strict';
 
-window.onload = function() {
+export class Navigation {
+  constructor() {
+    this.body = document.body;
+    this.main = document.getElementById( 'js-main' );
+    this.header = document.getElementById( 'js-header' );
+    this.footer = document.getElementById( 'js-footer' );
+    this.navigation = document.getElementById( 'js-navigation' );
+    this.navToggle = document.getElementById( 'js-nav-toggle' );
 
-  const body = document.body,
-    header = document.getElementById( 'js-header' ),
-    main = document.getElementById( 'js-main' ),
-    footer = document.getElementById( 'js-footer' );
-
-  const navigation = document.getElementById( 'js-navigation' );
-  const nav_toggle = document.getElementById( 'js-nav-toggle' );
-
-  if ( ! nav_toggle ) {
-    return;
+    this.init();
   }
 
-  const openMenu = () => {
-    header.classList.add( 'opened' );
-    body.classList.add( 'opened' );
+  init() {
+    document.addEventListener( 'mouseup', this.toggleMenu );
+    document.addEventListener( 'keyup', this.toggleMenu );
+    window.addEventListener( 'scroll', this.stickyHeader );
 
-    navigation.setAttribute( 'aria-expanded', 'true' );
-    navigation.removeAttribute( 'aria-hidden' );
+    this.stickyHeader();
+  }
 
-    nav_toggle.setAttribute( 'aria-pressed', 'false' );
+  openMenu = () => {
+    this.header.classList.add( 'opened' );
+    this.body.classList.add( 'opened' );
 
-    main.setAttribute( 'aria-hidden', 'true' );
-    main.setAttribute( 'tabindex', '-1' );
+    this.navigation.setAttribute( 'aria-expanded', 'true' );
+    this.navigation.removeAttribute( 'aria-hidden' );
 
-    if ( footer !== null ) {
-      footer.setAttribute( 'aria-hidden', 'true' );
-      footer.setAttribute( 'tabindex', '-1' );
+    this.navToggle.setAttribute( 'aria-pressed', 'false' );
+
+    this.main.setAttribute( 'aria-hidden', 'true' );
+    this.main.setAttribute( 'tabindex', '-1' );
+
+    if ( this.footer !== null ) {
+      this.footer.setAttribute( 'aria-hidden', 'true' );
+      this.footer.setAttribute( 'tabindex', '-1' );
     }
   };
 
-  const closeMenu = () => {
-    body.classList.remove( 'opened' );
-    header.classList.remove( 'opened' );
+  closeMenu = () => {
+    this.body.classList.remove( 'opened' );
+    this.header.classList.remove( 'opened' );
 
-    navigation.setAttribute( 'aria-expanded', 'false' );
-    navigation.setAttribute( 'aria-hidden', 'true' );
+    this.navigation.setAttribute( 'aria-expanded', 'false' );
+    this.navigation.setAttribute( 'aria-hidden', 'true' );
 
-    nav_toggle.setAttribute( 'aria-pressed', 'true' );
+    this.navToggle.setAttribute( 'aria-pressed', 'true' );
 
-    main.removeAttribute( 'aria-hidden' );
-    main.removeAttribute( 'tabindex' );
+    this.main.removeAttribute( 'aria-hidden' );
+    this.main.removeAttribute( 'tabindex' );
 
-    if ( footer !== null ) {
-      footer.removeAttribute( 'aria-hidden' );
-      footer.removeAttribute( 'tabindex' );
+    if ( this.footer !== null ) {
+      this.footer.removeAttribute( 'aria-hidden' );
+      this.footer.removeAttribute( 'tabindex' );
     }
   };
 
-  const toggleMenu = ( e ) => {
+  toggleMenu = ( e ) => {
     e.preventDefault();
 
-    const isOpen = body.classList.contains( 'opened' );
+    const isOpen = this.body.classList.contains( 'opened' );
     const isKeyUp = ( e.type === 'keyup' );
     const isMouseUp = ( e.type === 'mouseup' );
 
@@ -62,38 +68,30 @@ window.onload = function() {
       if ( isKeyUp ) {
         // if ESC
         if ( e.keyCode === 27 ) {
-          closeMenu();
+          this.closeMenu();
         }
       }
 
       // if target is selected
-      if ( e.target === nav_toggle || e.target.parentNode === nav_toggle ) {
+      if ( e.target === this.navToggle || e.target.parentNode === this.navToggle ) {
         if ( isMouseUp || isKeyUp && e.keyCode === 13 ) {
-          closeMenu();
+          this.closeMenu();
         }
       }
 
-    } else if ( ! isOpen && ( e.target === nav_toggle || e.target.parentNode === nav_toggle ) ) {
+    } else if ( ! isOpen && ( e.target === this.navToggle || e.target.parentNode === this.navToggle ) ) {
       if ( isMouseUp || ( isKeyUp && e.keyCode === 13 ) ) {
-        openMenu();
+        this.openMenu();
       }
     }
   };
 
-  document.addEventListener( 'mouseup', toggleMenu );
-  document.addEventListener( 'keyup', toggleMenu );
-
-  let fixed_header = () => {
+  stickyHeader = () => {
     if ( window.scrollY > 50 ) {
-      header.classList.add( 'fixed' );
+      this.header.classList.add( 'fixed' );
     } else {
-      header.classList.remove( 'fixed' );
+      this.header.classList.remove( 'fixed' );
     }
   };
 
-  fixed_header();
-  window.addEventListener( 'scroll', fixed_header );
-
-};
-
-
+}

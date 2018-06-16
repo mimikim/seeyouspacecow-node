@@ -1,5 +1,5 @@
 const urls = require('../config');
-const filepath = urls.js.dist + 'scripts.js';
+const filepath = urls.js.dist + 'global.js';
 const index = urls.js.dist + 'home.js';
 const about = urls.js.dist + 'about.js';
 const blog = urls.js.dist + 'blog.js';
