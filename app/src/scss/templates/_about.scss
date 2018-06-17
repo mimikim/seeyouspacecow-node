@@ -1,4 +1,24 @@
 body.about {
-  @include starry-bg( left top, 30% 20% );
+  @include starry-bg( left top, 50% 20% );
+}
+
+.about-me {
+  background: rgba( $white, 0.98 );
+  border: 8px solid black;
+  border-radius: 40px;
+  font-size: 30px;
+  line-height: 60px;
+  margin: 20px auto 40px;
+  max-width: 992px;
+  padding: 20px 40px 60px;
+
+  p {
+    text-indent: 60px;
+  }
+}
+
+.card-container {
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 

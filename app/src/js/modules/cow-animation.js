@@ -1,5 +1,4 @@
 // homepage cow animation
-// using jquery for anime.js
 
 'use strict';
 

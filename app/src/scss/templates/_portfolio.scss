@@ -30,6 +30,7 @@ body.portfolio {
   color: $white;
   display: block;
   font-size: 20px;
+  font-weight: 400;
 }
 
 .portfolio-container {
@@ -54,7 +55,7 @@ body.portfolio {
   border-radius: 30px;
   cursor: pointer;
   flex-basis: 100%;
-  font-weight: bold;
+  font-weight: 500;
   margin: 10px;
   overflow: hidden;
   position: relative;
