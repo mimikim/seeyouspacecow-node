@@ -12,7 +12,7 @@ module.exports = {
     class: 'portfolio',
     hasScript: true,
     hasStyle: true,
-    portfolioItems: require('./config-portfolio')
+    portfolioThumbs: require('./config-portfolio')()
   },
   'about': {
     title: 'About Mimi Kim, Web Developer',
