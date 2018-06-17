@@ -27,3 +27,12 @@ body.opened {
 .site-main {
   transition: transform 0.4s;
 }
+
+.bg-starfield {
+  //height: 100%;
+  position: absolute;
+  display: block;
+  top: 0;
+  //width: 100%;
+  z-index: -2;
+}

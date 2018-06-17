@@ -1,6 +1,7 @@
 'use strict';
 
-import { Cow } from './modules/cow-animation';
+import { Cow } from './modules/animation-cow';
+import { Starfield } from './modules/animation-starfield';
 
 ( () => {
   const animatedCow = document.getElementById( 'cow-animated' );
@@ -9,4 +10,6 @@ import { Cow } from './modules/cow-animation';
       new Cow();
     }, false );
   }
+
+  new Starfield;
 })();

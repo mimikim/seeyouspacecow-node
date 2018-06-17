@@ -1,7 +1,6 @@
 const tasks = [
   'babel',
   'browserify',
-  'concat',
   'imagemin',
   'postcss',
   'sass',
@@ -17,5 +16,7 @@ module.exports = function(grunt) {
   grunt.registerTask( 'css', [ 'sass', 'postcss' ] );
   grunt.registerTask( 'js', [ 'browserify', 'babel', 'uglify' ] );
   grunt.registerTask( 'img', [ 'imagemin', 'svgmin' ] );
-  grunt.registerTask( 'default', [ 'img', 'css', 'js' ] );
+
+  grunt.registerTask( 'build', [ 'img', 'css', 'js' ] );
+  grunt.registerTask( 'default', [ 'css', 'js' ] );
 };

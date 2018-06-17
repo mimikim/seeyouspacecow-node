@@ -1,6 +1,5 @@
 const urls = require('../config');
 const destination = urls.js.dist + 'global.js';
-const vendorDestination =  urls.js.dist + 'vendor.js';
 
 const index = urls.js.dist + 'home.js';
 const about = urls.js.dist + 'about.js';
@@ -16,7 +15,6 @@ const options = {
 
 // minify both script and vendor files
 options.all.files[destination] = destination;
-options.all.files[vendorDestination] = vendorDestination;
 options.all.files[index] = index;
 options.all.files[about] = about;
 options.all.files[blog] = blog;

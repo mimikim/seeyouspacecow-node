@@ -1,6 +1,6 @@
 'use strict';
 
-import { Badge } from './modules/badge-animation';
+import { Badge } from './modules/animation-badge';
 
 ( () => {
   new Badge;
