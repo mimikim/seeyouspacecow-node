@@ -29,6 +29,8 @@ vendor packages managed with bower
 
 this is a test migration to node (from php) as my primary backend language, see how it goes
 
+routes for each page are defined inside `/app/routes/config.js` and executed inside `/app/routes/index.js`
+
 (tunnel-agent is installed because the version loaded by grunt-contrib-imagemin is older, and there are some security vulnerabilities with the older version)
 
 #### TODO:

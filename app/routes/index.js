@@ -2,7 +2,7 @@ let config = require('./config');
 let express = require('express');
 let router = express.Router();
 
-// for each property in routes config
+// for each page in routes config
 for( let route in config ) {
   let name = route;
   let options = config[route];

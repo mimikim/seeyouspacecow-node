@@ -11,7 +11,8 @@ module.exports = {
     title: 'Mimi Kim Web Developer Portfolio',
     class: 'portfolio',
     hasScript: true,
-    hasStyle: true
+    hasStyle: true,
+    portfolioItems: require('./config-portfolio')
   },
   'about': {
     title: 'About Mimi Kim, Web Developer',
