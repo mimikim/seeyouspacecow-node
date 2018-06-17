@@ -30,8 +30,13 @@ for( let route in config ) {
 
 // generate portfolio item content
 portfolioConfig.forEach( function( elm ) {
+  let options = elm;
+  options.class = 'portfolio';
+  options.hasScript = true;
+  options.hasStyle = true;
+
   router.get('/portfolio/' + elm.url, function(req, res, next) {
-    res.render( 'portfolio-item', elm );
+    res.render( 'portfolio-item', options );
   });
 });
 
