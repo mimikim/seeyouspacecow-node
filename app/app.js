@@ -5,24 +5,14 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var fs = require('fs');
 
-var indexRouter = require('./routes/index');
-var portfolioRouter = require('./routes/portfolio');
-var aboutRouter = require('./routes/about');
-var contactRouter = require('./routes/contact');
-var blogRouter = require('./routes/blog');
-
 var app = express();
+
+var hbs = require('hbs');
+var registerPartials = require('./includes/registerPartials')();
 
 // view engine setup
 app.set('views', path.join(__dirname, './views'));
 app.set('view engine', 'hbs');
-
-// register partials
-var hbs = require('hbs');
-hbs.registerPartial( 'head', fs.readFileSync(path.join(__dirname, './views/head.hbs'), 'utf8') );
-hbs.registerPartial( 'footer', fs.readFileSync(path.join(__dirname, './views/footer.hbs'), 'utf8') );
-
-hbs.registerHelper('renderSVG', function() {});
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -30,16 +20,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 
-// sets routes
-app.use('/', indexRouter);
-app.use('/index', indexRouter);
-app.use('/index.html', indexRouter);
-app.use('/index.php', indexRouter);
-
-app.use('/portfolio', portfolioRouter);
-app.use('/about', aboutRouter);
-app.use('/contact', contactRouter);
-app.use('/blog', blogRouter);
+// set routes
+app.use( require('./routes') );
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

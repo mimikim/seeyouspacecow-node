@@ -1,13 +1,30 @@
-const express = require('express');
-const router = express.Router();
+let config = require('./config');
+let express = require('express');
+let router = express.Router();
 
-router.get('/', function(req, res, next) {
-  res.render('index', {
-    title: 'See You Space Cow - Mimi Kim Web Developer',
-    class: 'home',
-    hasScript: true,
-    hasStyle: true
+// for each property in routes config
+for( let route in config ) {
+  let name = route;
+  let options = config[route];
+
+  if ( name === 'index' ) {
+    router.get('/', function(req, res, next) {
+      res.render( name, options );
+    });
+  }
+
+  router.get('/' + name, function(req, res, next) {
+    res.render( name, options );
   });
-});
+
+  // redirects, just in case
+  router.get('/' + name + '.html', function(req, res, next) {
+    res.render( name, options );
+  });
+
+  router.get('/' + name + '.php', function(req, res, next) {
+    res.render( name, options );
+  });
+}
 
 module.exports = router;
