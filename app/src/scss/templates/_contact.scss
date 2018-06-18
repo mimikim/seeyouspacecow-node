@@ -7,11 +7,18 @@ body.contact {
     display: flex;
     height: calc( 90vh - 90px );
     justify-content: center;
+    margin-top: 120px;
     text-align: center;
   }
 }
 
-.contact-container {}
+.contact-container {
+  margin-top: 60px;
+
+  @media ( min-width: $small ) {
+
+  }
+}
 
 .contact-headline {
   margin-bottom: 20px;

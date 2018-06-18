@@ -47,12 +47,34 @@ export class ContactForm {
   }
 
   submit() {
-    let email = {};
+    let email = '';
+    let xhr = new XMLHttpRequest();
 
     this.fields.forEach( ( elm ) => {
-      email[elm.id] = elm.value;
+      email += elm.id + '=' + elm.value + '&';
     });
 
+    // remove last ampersand
+    email = email.slice( 0, -1 );
+
+    xhr.onreadystatechange = function() {
+      if ( this.readyState === 4 && this.status === 200 ) {
+        let isSent = xhr.responseText;
+
+        // if email successfully sent
+        if ( isSent ) {
+          document.getElementById('js-contact-form').remove();
+
+        } else {
+
+        }
+
+      }
+    };
+
+    xhr.open( 'POST', 'http://localhost:8000/mail' );
+    xhr.setRequestHeader( 'Content-type', 'application/x-www-form-urlencoded' );
+    xhr.send( email );
   }
 
 }

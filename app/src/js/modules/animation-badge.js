@@ -45,7 +45,7 @@ export class Badge {
         targets: this.badge,
         strokeDashoffset: [ anime.setDashoffset, 0 ],
         easing: 'easeInOutSine',
-        duration: 900
+        duration: 800
       },
       {
         targets: this.badge,
