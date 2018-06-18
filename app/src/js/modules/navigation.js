@@ -2,6 +2,7 @@
 
 export class Navigation {
   constructor() {
+    this.html = document.body.parentNode;
     this.body = document.body;
     this.main = document.getElementById( 'js-main' );
     this.header = document.getElementById( 'js-header' );
@@ -21,6 +22,7 @@ export class Navigation {
   }
 
   openMenu = () => {
+    this.html.style.overflow = 'hidden';
     this.header.classList.add( 'opened' );
     this.body.classList.add( 'opened' );
 
@@ -39,6 +41,7 @@ export class Navigation {
   };
 
   closeMenu = () => {
+    this.html.style.overflow = '';
     this.body.classList.remove( 'opened' );
     this.header.classList.remove( 'opened' );
 

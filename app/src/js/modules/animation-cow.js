@@ -7,7 +7,7 @@ import anime from '../../vendor/animejs/anime';
 export class Cow {
   constructor() {
     this.face();
-    Cow.draw_lines();
+    this.draw_lines();
   }
 
   // animations on the face
@@ -33,7 +33,7 @@ export class Cow {
     }, 500 );
   }
 
-  static draw_lines() {
+  draw_lines() {
     const cow_paths = [
       document.querySelector('#body-outline'),
       document.querySelector('#helmet-outline'),

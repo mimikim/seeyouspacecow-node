@@ -1,4 +1,4 @@
 body.blog {
-  @include starry-bg( 0 0, 50% 20% );
+  @include starry-bg( 0 0, 50% 20%, $blue-shirt );
 }
 

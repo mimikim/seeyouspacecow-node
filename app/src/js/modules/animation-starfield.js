@@ -1,18 +1,25 @@
 // animated starfield background with html5 canvas
 
 export class Starfield {
-  constructor() {
+  constructor( customOptions ) {
     this.stars = [];
     this.options = {
-      num: 80,
+      num: 100,
       minSize: 0.5,
       maxSize: 4,
       opacitySpeed: 0.005,
       opacityMin: 0.01,
-      opacityMax: 0.6,
+      opacityMax: 0.4,
       minSpeed: 0.01,
-      maxSpeed: 0.09
+      maxSpeed: 0.1
     };
+
+    // uses custom options, if passed
+    for( let key in customOptions ) {
+      if ( this.options.hasOwnProperty(key) ) {
+        this.options[key] = customOptions[key];
+      }
+    }
 
     this.init();
 
@@ -39,8 +46,8 @@ export class Starfield {
       let opacity = Math.random() * ( this.options.opacityMax - this.options.opacityMin ) + this.options.opacityMin;
       let size = Math.random() * ( this.options.maxSize - this.options.minSize ) + this.options.minSize;
 
-      let xpos = Math.floor( Math.random() * ( window.innerWidth + 1 ) );
-      let ypos = Math.floor( Math.random() * ( window.innerHeight + 1 ) );
+      let xpos = Math.round( Math.random() * ( window.innerWidth + 1 ) );
+      let ypos = Math.round( Math.random() * ( window.innerHeight + 1 ) );
 
       let xspeed = Math.random() * ( this.options.maxSpeed - this.options.minSpeed ) + this.options.minSpeed / 10;
       let yspeed = Math.random() * ( this.options.maxSpeed - this.options.minSpeed ) + this.options.minSpeed / 10;

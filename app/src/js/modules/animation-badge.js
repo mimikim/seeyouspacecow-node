@@ -23,6 +23,7 @@ export class Badge {
 
     this.container.addEventListener( 'click', () => {
       anime( this.getTwirl() );
+      this.getSmile( 800 );
     });
   };
 

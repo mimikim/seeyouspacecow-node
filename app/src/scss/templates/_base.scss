@@ -5,6 +5,7 @@ html {
 body {
   -ms-overflow-style: scrollbar;
   font-family: $sans-serif;
+  line-height: 1.4;
   margin: 0;
   min-width: 320px;
   padding: 0;
@@ -29,10 +30,38 @@ body.opened {
 }
 
 .bg-starfield {
-  //height: 100%;
-  position: absolute;
   display: block;
+  position: fixed;
   top: 0;
-  //width: 100%;
   z-index: -2;
 }
+
+.content-container {
+  background: rgba( $white, 0.85 );
+  border: 8px solid black;
+  border-radius: 40px;
+  font-size: 22px;
+  margin: 20px 30px;
+  max-width: 992px;
+  padding: 20px 20px 60px;
+
+  @media ( min-width: $small ) {
+    font-size: 24px;
+  }
+
+  @media ( min-width: $medium ) {
+    font-size: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+
+    p {
+      text-indent: 60px;
+    }
+  }
+
+  @media ( min-width: $x-large ) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+

@@ -34,6 +34,7 @@ portfolioConfig.forEach( function( elm ) {
   options.class = 'portfolio';
   options.hasScript = true;
   options.hasStyle = true;
+  options.title = options.name;
 
   router.get('/portfolio/' + elm.url, function(req, res, next) {
     res.render( 'portfolio-item', options );

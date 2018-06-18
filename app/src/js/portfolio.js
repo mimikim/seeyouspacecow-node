@@ -1,4 +1,7 @@
-// filter portfolio
+'use strict';
+
+import {Starfield} from "./modules/animation-starfield";
+
 ( () => {
   "use strict";
 
@@ -91,5 +94,7 @@
   }
 
   //new Portfolio;
+
+  new Starfield;
 
 } )();

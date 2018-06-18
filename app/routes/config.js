@@ -2,32 +2,32 @@
 
 module.exports = {
   'index': {
-    title: 'See You Space Cow - Mimi Kim Web Developer',
+    title: 'See You Space Cow',
     class: 'home',
     hasScript: true,
     hasStyle: true
   },
   'portfolio': {
-    title: 'Mimi Kim Web Developer Portfolio',
+    title: 'Portfolio',
     class: 'portfolio',
     hasScript: true,
     hasStyle: true,
     portfolioThumbs: require('./config-portfolio')()
   },
   'about': {
-    title: 'About Mimi Kim, Web Developer',
+    title: 'About',
     class: 'about',
     hasScript: true,
     hasStyle: true
   },
   'contact': {
-    title: 'Contact Mimi Kim, Web Developer',
+    title: 'Contact',
     class: 'contact',
     hasScript: true,
     hasStyle: true
   },
   'blog': {
-    title: 'About Mimi Kim, Web Developer',
+    title: 'Blog',
     class: 'blog',
     hasScript: true,
     hasStyle: true

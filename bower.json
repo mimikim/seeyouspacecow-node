@@ -17,8 +17,6 @@
   ],
   "devDependencies": {
     "animejs": "^2.2.0",
-    "normalize-css": "^7.0.0",
-    "espi-a11y-dialog": "^5.1.0",
     "slick-carousel": "^1.8.1"
   }
 }
