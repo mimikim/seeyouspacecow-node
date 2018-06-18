@@ -1,6 +1,6 @@
 .button {
   border: 8px solid $black;
-  border-radius: 30px;
+  border-radius: 20px;
   box-shadow: inset 6px -10px 0 1px rgba( $black, 0.3 ),
               inset -8px 8px 0 1px rgba( #ffffff, 0.5 );
   color: $black;
@@ -8,7 +8,7 @@
   display: inline-block;
   font-size: 25px;
   font-weight: bold;
-  padding: 30px;
+  padding: 20px 30px;
   position: relative;
   text-decoration: none;
   transition: letter-spacing 0.2s, box-shadow 0.2s;
@@ -41,11 +41,6 @@
 
   &.gold {
     background: $gold-shirt;
-  }
-
-  &.medium-padding {
-    border-radius: 20px;
-    padding: 20px 30px;
   }
 
 }

@@ -20,8 +20,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 
-// set routes
+// set pages
 app.use( require('./routes') );
+
+// set endpoints
+app.use( require('./endpoints/email') );
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

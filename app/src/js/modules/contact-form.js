@@ -41,7 +41,18 @@ export class ContactForm {
 
     if ( document.querySelector( '.contact-form .input.error') !== null ) {
       this.error.innerText = 'Please fill out the fields correctly!';
+    } else {
+      this.submit();
     }
+  }
+
+  submit() {
+    let email = {};
+
+    this.fields.forEach( ( elm ) => {
+      email[elm.id] = elm.value;
+    });
+
   }
 
 }
