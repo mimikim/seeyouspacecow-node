@@ -11,7 +11,7 @@ export class Starfield {
       opacityMin: 0.01,
       opacityMax: 0.4,
       minSpeed: 0.01,
-      maxSpeed: 0.1
+      maxSpeed: 0.08
     };
 
     // uses custom options, if passed

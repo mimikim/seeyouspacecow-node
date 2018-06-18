@@ -29,8 +29,9 @@
   > li {
       margin-bottom: 25px;
 
-    @media ( min-width: $medium ) {
+    @media ( min-width: $small ) {
       display: inline-block;
+      margin-bottom: 0;
       margin-right: 40px;
 
       &:last-of-type {
