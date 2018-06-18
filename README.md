@@ -15,7 +15,7 @@ es6 js, postcss, nodejs, express, handlebars, grunt, bower
 
 #### Notes:
 
-site will be accessible at `http://localhost` 
+site will be accessible at `http://localhost:8000` 
 
 the server runs on port 8000
 

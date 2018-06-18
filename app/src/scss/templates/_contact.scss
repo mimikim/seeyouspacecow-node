@@ -43,7 +43,7 @@ body.contact {
     &:focus,
     &:hover {
       background: rgba( $white, 1 );
-      box-shadow: inset 4px -4px 0 1px rgba( $black, 0.3 ), inset -6px 6px 0 1px rgba( $white, 0.5 );
+      box-shadow: inset 3px -3px 0 1px rgba( $black, 0.3 ), inset -6px 6px 0 1px rgba( $white, 0.5 );
     }
 
   }
@@ -54,8 +54,15 @@ body.contact {
 
   .submit {
     border-radius: 15px;
+    box-shadow: inset 6px -6px 0 1px rgba( $black, 0.3 ), inset -6px 6px 0 1px rgba( $white, 0.5 );
     font-size: 20px;
     padding: 20px 30px;
+
+    &:active,
+    &:focus,
+    &:hover {
+      box-shadow: inset 3px -3px 0 1px rgba( $black, 0.3 ), inset -6px 6px 0 1px rgba( $white, 0.5 );
+    }
   }
 }
 
