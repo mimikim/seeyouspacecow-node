@@ -24,6 +24,8 @@ body.opened {
 
 .site-main {
   margin-top: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
   transition: transform 0.4s;
 }
 
@@ -39,7 +41,7 @@ body.opened {
   border: 8px solid black;
   border-radius: 40px;
   font-size: 22px;
-  margin: 20px 30px;
+  margin: 20px auto;
   max-width: 992px;
   padding: 20px 20px 60px;
 
@@ -55,11 +57,6 @@ body.opened {
     p {
       text-indent: 60px;
     }
-  }
-
-  @media ( min-width: $x-large ) {
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
