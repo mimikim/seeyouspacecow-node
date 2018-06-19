@@ -12,5 +12,5 @@ app/src/vendor
 app/src/img/portfolio
 app/src/img/about
 
-app/endpoints/creds
+app/endpoints/creds.js
 
