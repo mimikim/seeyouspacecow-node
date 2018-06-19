@@ -20,7 +20,7 @@ export class PortfolioLoader {
         this.container_div.innerHTML = '';
         button.classList.toggle( 'active' );
         this.maybe_add_button( button );
-        this.api_call( this.active_buttons );
+        this.api_call();
       } );
     } );
 
@@ -59,8 +59,7 @@ export class PortfolioLoader {
     }
   }
 
-  api_call( selectedTypes = [] ) {
-    // create promise
+  api_call() {
     let promise = new Promise( ( resolve, reject ) => {
       let xhr = new XMLHttpRequest();
       let types = '';
@@ -71,8 +70,8 @@ export class PortfolioLoader {
         }
       };
 
-      if ( selectedTypes.length > 0 ) {
-        types = 'types=' + JSON.stringify( selectedTypes );
+      if ( this.active_buttons.length > 0 ) {
+        types = 'types=' + JSON.stringify( this.active_buttons );
       }
 
       xhr.open( 'POST', this.endpoint, true );
@@ -82,18 +81,32 @@ export class PortfolioLoader {
 
     // then...
     promise.then( response => {
-      let html = '';
+      this.container_div.innerHTML = '';
 
       JSON.parse( response ).forEach( ( { name, url, thumb } ) => {
-        html += `<a href="${url}" class="item fade-in" tabindex="0">`
-          + `<figure>`
-          + `<img src="/img/placeholder.png" class="responsive lazyload" data-img="${thumb}" alt="portfolio thumbnail picture for ${name}">`
-          + `<figcaption>${name}</figcaption>`
-          + `</figure>`
-          + `</a>`;
-      } );
 
-      this.container_div.innerHTML = html;
+        let element = document.createElement('a');
+        element.href = '/portfolio/' + url + '/';
+        element.classList.add( 'item', 'fade-in' );
+        element.setAttribute( 'tabindex', 0 );
+
+        let imgElm = document.createElement('img');
+        imgElm.src = '/img/placeholder.png';
+        imgElm.classList.add( 'responsive', 'lazyload' );
+        imgElm.dataset.src = thumb;
+        imgElm.setAttribute( 'alt', 'portfolio thumbnail picture for ' + name );
+
+        let figure = document.createElement('figure');
+
+        let figcaption = document.createElement('figcaption');
+        figcaption.innerText = name;
+
+        figure.insertAdjacentElement( 'afterbegin', imgElm );
+        figure.insertAdjacentElement( 'beforeend', figcaption );
+        element.insertAdjacentElement( 'afterbegin', figure );
+
+        this.container_div.insertAdjacentElement( 'beforeend', element );
+      } );
 
       // run lazy loading again
       this.lazyLoader.init();

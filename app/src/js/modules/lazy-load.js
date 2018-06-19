@@ -28,6 +28,7 @@ export class LazyLoad {
           let isInView = ( lazyImage.getBoundingClientRect().top <= window.innerHeight && lazyImage.getBoundingClientRect().bottom >= 0 );
 
           if ( isInView && getComputedStyle( lazyImage ).display !== 'none' ) {
+
             // set proper url to image
             lazyImage.src = lazyImage.dataset.src;
             lazyImage.classList.remove( 'lazyload' );
@@ -37,6 +38,8 @@ export class LazyLoad {
             });
 
             if ( this.images.length === 0 ) {
+              this.lazyLoad();
+
               document.removeEventListener( 'scroll', () => { this.lazyLoad(); } );
               window.removeEventListener( 'resize', () => { this.lazyLoad(); } );
               window.removeEventListener( 'orientationchange', () => { this.lazyLoad(); } );
@@ -49,6 +52,5 @@ export class LazyLoad {
       }, 200 );
     }
   };
-
 
 }
