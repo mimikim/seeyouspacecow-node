@@ -29,6 +29,25 @@
     opacity: 1;
   }
 }
+.fade-in {
+  animation: fade-in 0.7s cubic-bezier( 0.550, 0.085, 0.680, 0.530 );
+}
+
+// fade out
+@keyframes fade-out {
+  0% {
+    filter: blur( 0px );
+    opacity: 1;
+  }
+  100% {
+    filter: blur( 12px );
+    opacity: 0;
+  }
+}
+
+.fade-out {
+  animation: fade-out 0.7s cubic-bezier( 0.550, 0.085, 0.680, 0.530 );
+}
 
 // shooting star
 @keyframes shooting-star {
