@@ -66,13 +66,13 @@
 // loading ellipses
 @keyframes loading {
   to {
-    width: 0.5em;
+    width: 1em;
   }
 }
 
 .loading {
   &:after {
-    animation: loading steps( 2, end ) 2s infinite;
+    animation: loading steps( 4, end ) 4.5s infinite;
     content: "\2026";
     overflow: hidden;
     vertical-align: bottom;
