@@ -6,7 +6,7 @@ let router = express.Router();
 let nodemailer = require('nodemailer');
 
 // POST to create new object
-router.post('/mail', function(req, res) {
+router.post('/endpoint/mail', function(req, res) {
   let name = req.body['form-name'];
   let email = req.body['form-email'];
   let message = req.body['form-message'];

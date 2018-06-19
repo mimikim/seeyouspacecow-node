@@ -1,12 +1,15 @@
-export class Portfolio {
+export class PortfolioLoader {
 
   constructor() {
-    // set variables
-    this.route = `${wp_portfolio.url}/wp-json/spacecow/v1/portfolio/`;
+    this.endpoint = document.location.origin + '/endpoint/portfolio';
     this.active_buttons = [];
     this.container_div = document.getElementById( 'js-portfolio-results' );
     this.filters = document.querySelectorAll( '#js-portfolio-filters .button' );
 
+    this.init();
+  }
+
+  init() {
     // add filter function
     this.filters.forEach( button => {
       button.addEventListener( 'click', () => {
@@ -18,13 +21,15 @@ export class Portfolio {
     } );
 
     // add reset button
-    document.getElementById( 'js-reset' ).addEventListener( 'click', this.reset );
+    document.getElementById( 'js-reset' ).addEventListener( 'click', () => {
+      this.reset();
+    });
   }
 
   // resets active filters
-  reset = () => {
+  reset() {
     if ( this.active_buttons.length > 0 ) {
-      this.active_buttons = [];
+      this.active_buttons = '';
 
       this.filters.forEach( button => {
         button.classList.remove( 'active' );
@@ -36,22 +41,22 @@ export class Portfolio {
 
   // add or remove toggled filter button from array
   maybe_add_button( element ) {
-    const id = parseInt( element.dataset.categoryId, 10 );
-    const index = this.active_buttons.indexOf( id );
+    const type = element.dataset.type;
+    const index = this.active_buttons.indexOf( type );
 
     // remove ID if it exists, otherwise add
     if ( index > -1 ) {
       this.active_buttons.splice( index, 1 );
     } else {
-      this.active_buttons.push( id );
+      this.active_buttons.push( type );
     }
   }
 
-  api_call( selectedIDs = [] ) {
+  api_call( selectedTypes = '' ) {
     // create promise
     let promise = new Promise( ( resolve, reject ) => {
       let xhr = new XMLHttpRequest();
-      let url = this.route;
+      let types = '';
 
       xhr.onload = function() {
         if ( this.readyState === 4 && this.status === 200 ) {
@@ -59,23 +64,24 @@ export class Portfolio {
         }
       };
 
-      if ( selectedIDs.length > 0 ) {
-        url = url + '?type=' + JSON.stringify( selectedIDs );
+      if ( selectedTypes.length > 0 ) {
+        types = 'types=' + JSON.stringify( selectedTypes );
       }
 
-      xhr.open( 'GET', url, true );
-      xhr.send( null );
+      xhr.open( 'POST', this.endpoint, true );
+      xhr.setRequestHeader( 'Content-type', 'application/x-www-form-urlencoded' );
+      xhr.send( types );
     } );
 
     // then...
     promise.then( response => {
       let html = '';
 
-      JSON.parse( response ).forEach( ( { id, title, image, url } ) => {
+      JSON.parse( response ).forEach( ( { name, url, thumb } ) => {
         html += `<a href="${url}" class="item fade-in" tabindex="0">`
           + `<figure>`
-          + `<img src="${image}" class="responsive">`
-          + `<figcaption>${title}</figcaption>`
+          + `<img src="${thumb}" class="responsive">`
+          + `<figcaption>${name}</figcaption>`
           + `</figure>`
           + `</a>`;
       } );
@@ -83,5 +89,4 @@ export class Portfolio {
       this.container_div.innerHTML = html;
     } );
   }
-
 }

@@ -75,7 +75,7 @@ export class ContactForm {
       }
     };
 
-    xhr.open( 'POST', 'http://localhost:8000/mail' );
+    xhr.open( 'POST', document.location.origin + '/endpoint/mail' );
     xhr.setRequestHeader( 'Content-type', 'application/x-www-form-urlencoded' );
     xhr.send( email );
   }

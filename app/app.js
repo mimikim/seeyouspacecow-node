@@ -27,7 +27,7 @@ app.use( require('./includes/routes') );
 app.use( require('./includes/endpoint-email') );
 
 // set portfolio endpoint
-// app.use( require('./includes/endpoint-portfolio') );
+app.use( require('./includes/endpoint-portfolio') );
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
