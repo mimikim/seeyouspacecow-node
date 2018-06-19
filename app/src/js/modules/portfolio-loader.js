@@ -1,3 +1,7 @@
+'use strict';
+
+import {LazyLoad} from "./lazy-load";
+
 export class PortfolioLoader {
 
   constructor() {
@@ -24,6 +28,9 @@ export class PortfolioLoader {
     document.getElementById( 'js-reset' ).addEventListener( 'click', () => {
       this.reset();
     });
+
+    // lazy load images
+    this.lazyLoader = new LazyLoad;
   }
 
   // resets active filters
@@ -80,13 +87,16 @@ export class PortfolioLoader {
       JSON.parse( response ).forEach( ( { name, url, thumb } ) => {
         html += `<a href="${url}" class="item fade-in" tabindex="0">`
           + `<figure>`
-          + `<img src="${thumb}" class="responsive">`
+          + `<img src="/img/placeholder.png" class="responsive lazyload" data-img="${thumb}" alt="portfolio thumbnail picture for ${name}">`
           + `<figcaption>${name}</figcaption>`
           + `</figure>`
           + `</a>`;
       } );
 
       this.container_div.innerHTML = html;
+
+      // run lazy loading again
+      this.lazyLoader.init();
     } );
   }
 }
