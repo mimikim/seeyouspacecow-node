@@ -73,9 +73,13 @@ body.portfolio {
   &:active {
     top: 8px;
   }
-  
+
+  @media ( min-width: 600px ) {
+    flex-basis: calc( 50% - 26px );
+  }
+
   @media ( min-width: $medium ) {
-    flex-basis: 31%;
+    flex-basis: calc( 33% - 26px );
   }
 }
 
