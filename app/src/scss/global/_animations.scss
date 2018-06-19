@@ -14,6 +14,7 @@
   75% { transform: scale3d( 1.05, 0.95, 1 ); }
   100% { transform: scale3d( 1, 1, 1 ); }
 }
+
 .animation-jelly {
   animation: jelly 0.9s both;
 }
@@ -29,6 +30,7 @@
     opacity: 1;
   }
 }
+
 .fade-in {
   animation: fade-in 0.7s cubic-bezier( 0.550, 0.085, 0.680, 0.530 );
 }
@@ -59,4 +61,23 @@
 @keyframes rotate {
   0% { transform: rotateY( 0deg ) }
   100% { transform: rotateY( 360deg ) }
+}
+
+// loading ellipses
+@keyframes loading {
+  to {
+    width: 0.5em;
+  }
+}
+
+.loading {
+  &:after {
+    animation: loading steps( 2, end ) 2s infinite;
+    content: "\2026";
+    overflow: hidden;
+    vertical-align: bottom;
+    width: 0;
+    display: inline-block;
+    position: absolute;
+  }
 }

@@ -55,6 +55,8 @@ export class ContactForm {
     let email = '';
     let xhr = new XMLHttpRequest();
 
+    this.headline.classList.remove('loading');
+
     this.fields.forEach( ( elm ) => {
       email += elm.id + '=' + elm.value + '&';
     });
