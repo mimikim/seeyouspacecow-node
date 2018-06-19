@@ -29,7 +29,7 @@ export class PortfolioLoader {
   // resets active filters
   reset() {
     if ( this.active_buttons.length > 0 ) {
-      this.active_buttons = '';
+      this.active_buttons = [];
 
       this.filters.forEach( button => {
         button.classList.remove( 'active' );
@@ -52,7 +52,7 @@ export class PortfolioLoader {
     }
   }
 
-  api_call( selectedTypes = '' ) {
+  api_call( selectedTypes = [] ) {
     // create promise
     let promise = new Promise( ( resolve, reject ) => {
       let xhr = new XMLHttpRequest();

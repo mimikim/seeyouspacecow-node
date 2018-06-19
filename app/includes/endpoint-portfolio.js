@@ -10,12 +10,22 @@ router.post('/endpoint/portfolio', function(req, res, next) {
 
   // returns filtered portfolio items
   if ( data !== undefined ) {
-    let types = JSON.parse( data );
+    let selectedTypes = JSON.parse( data );
 
-    items = portfolioConfig.filter( ( elm, index ) => {
-      if ( types.indexOf(elm.type) > -1 ) {
+    items = portfolioConfig.filter( elm => {
+      let flag = false;
+
+      // check each category in types
+      elm.type.forEach( ( elmType, index ) => {
+        if ( selectedTypes.indexOf( elm.type[index] ) > -1 ) {
+          flag = true;
+        }
+      } );
+
+      if ( flag ) {
         return elm;
       }
+
     });
   }
 
