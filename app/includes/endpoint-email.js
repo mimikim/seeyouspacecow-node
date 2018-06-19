@@ -1,5 +1,5 @@
 // email endpoint
-const creds = require('./creds');
+const creds = require('./config/auth');
 
 let express = require('express');
 let router = express.Router();
@@ -15,12 +15,12 @@ router.post('/mail', function(req, res) {
   // email to send these messages to
   let transporter = nodemailer.createTransport({
     service: 'gmail',
-    auth: creds
+    auth: creds.auth
   });
 
   let adminEmail = {
-    from: 'Mimi Kim <'+creds.user+'>',
-    to: creds.user,
+    from: creds.name + ' <'+creds.auth.user+'>',
+    to: creds.auth.user,
     subject: 'New Form Submission from ' + name,
     html: message + '<br>' + email
   };
@@ -38,7 +38,7 @@ router.post('/mail', function(req, res) {
 
   // send copy to form submitter
   let userEmail = {
-    from: 'Mimi Kim <'+creds.user+'>',
+    from: creds.name + ' <'+creds.auth.user+'>',
     to: email,
     subject: 'Thank you for your form submission!',
     html: 'Hello ' + name + ', thanks for your message. You will receive a reply soon.<br>Below is a copy of your message: <br>' + message
@@ -53,7 +53,6 @@ router.post('/mail', function(req, res) {
       console.log('User email sent: ' + info.response);
     }
   });
-
 
   setTimeout( function() {
     res.send( isSent );

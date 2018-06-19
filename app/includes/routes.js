@@ -1,5 +1,5 @@
-let config = require('./config');
-let portfolioConfig = require('./config-portfolio')();
+let config = require('./config/pages');
+let portfolioConfig = require('./config/pages-portfolio')();
 let express = require('express');
 let router = express.Router();
 

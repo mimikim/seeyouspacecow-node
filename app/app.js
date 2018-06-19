@@ -7,9 +7,6 @@ var fs = require('fs');
 
 var app = express();
 
-var hbs = require('hbs');
-var registerPartials = require('./includes/registerPartials')();
-
 // view engine setup
 app.set('views', path.join(__dirname, './views'));
 app.set('view engine', 'hbs');
@@ -20,11 +17,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 
+// register partials
+require('./includes/register-partials')();
+
 // set pages
-app.use( require('./routes') );
+app.use( require('./includes/routes') );
 
 // set email endpoint
-app.use( require('./endpoints/email') );
+app.use( require('./includes/endpoint-email') );
+
+// set portfolio endpoint
+// app.use( require('./includes/endpoint-portfolio') );
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
