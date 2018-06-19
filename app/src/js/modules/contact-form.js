@@ -62,17 +62,16 @@ export class ContactForm {
     // remove last ampersand
     email = email.slice( 0, -1 );
 
-    xhr.onreadystatechange = function() {
-      if ( this.readyState === 4 && this.status === 200 ) {
+    xhr.onreadystatechange = () => {
+      if ( xhr.readyState === 4 && xhr.status === 200 ) {
         let isSent = xhr.responseText;
 
         // if email successfully sent
         if ( isSent ) {
-
+          this.onSuccess();
         } else {
-
+          this.onFail();
         }
-
       }
     };
 
