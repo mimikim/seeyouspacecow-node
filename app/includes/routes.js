@@ -31,7 +31,7 @@ for( let route in config ) {
 // generate portfolio item content
 portfolioConfig.forEach( function( elm ) {
   let options = elm;
-  options.class = 'portfolio';
+  options.class = 'portfolio-item';
   options.hasScript = true;
   options.hasStyle = true;
   options.title = options.name;
