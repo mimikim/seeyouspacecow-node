@@ -101,7 +101,7 @@ export class ContactForm {
 
       new Badge;
 
-    }, 600);
+    }, 500);
   }
 
   onFail() {
