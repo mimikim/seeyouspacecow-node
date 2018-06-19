@@ -2,10 +2,15 @@
 .DS_Store
 .sass-cache
 node_modules
+
 public/css
 public/img
 public/js
 public/svg
+
 app/src/vendor
 app/src/img/portfolio
 app/src/img/about
+
+app/endpoints/creds
+
