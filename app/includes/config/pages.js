@@ -26,10 +26,10 @@ module.exports = {
     hasScript: true,
     hasStyle: true
   },
-  'blog': {
-    title: 'Blog',
-    class: 'blog',
-    hasScript: true,
-    hasStyle: true
-  }
+  // 'blog': {
+  //   title: 'Blog',
+  //   class: 'blog',
+  //   hasScript: true,
+  //   hasStyle: true
+  // }
 };
