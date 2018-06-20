@@ -82,3 +82,8 @@
     position: absolute;
   }
 }
+
+// hm cow tail wag
+@keyframes tail-wagging {
+  to { background-position: -324px 100%; }
+}
