@@ -14,4 +14,4 @@ app/src/img/about
 
 app/includes/config/auth.js
 
-
+app/views/partial/analytics.hbs
