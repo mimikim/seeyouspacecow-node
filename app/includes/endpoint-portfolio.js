@@ -1,5 +1,5 @@
 // returns all portfolio info
-const portfolioConfig = require('./config/pages-portfolio')();
+const portfolioConfig = require('./config/portfolio-items/');
 
 let express = require('express');
 let router = express.Router();
