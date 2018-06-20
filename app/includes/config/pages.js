@@ -12,7 +12,7 @@ module.exports = {
     class: 'portfolio',
     hasScript: true,
     hasStyle: true,
-    portfolioThumbs: require('./pages-portfolio')()
+    portfolioThumbs: require('./portfolio-items')
   },
   'about': {
     title: 'About',
@@ -26,10 +26,10 @@ module.exports = {
     hasScript: true,
     hasStyle: true
   },
-  // 'blog': {
-  //   title: 'Blog',
-  //   class: 'blog',
-  //   hasScript: true,
-  //   hasStyle: true
-  // }
+  'blog': {
+    title: 'Blog',
+    class: 'blog',
+    hasScript: true,
+    hasStyle: true
+  }
 };

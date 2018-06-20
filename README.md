@@ -1,7 +1,9 @@
 # seeyouspacecow-node
 node version of my portfolio website
 
-es6 js, postcss, nodejs, express, handlebars, grunt, bower
+[seeyouspacecow.com](http://seeyouspacecow.com)
+
+es6 js, sass, nodejs, express, handlebars, grunt, bower
 
 ### To use:
 
@@ -29,7 +31,7 @@ vendor packages managed with bower
 
 this is a test migration to node (from php) as my primary backend language, see how it goes
 
-routes for each page are defined inside `/app/includes/config/config.js` and executed inside `/app/includes/routes.js`
+routes for each page are defined inside `/app/includes/config/` and executed inside `/app/includes/routes.js`
 
 each page has its own respective js and css files, apart from globals
 
