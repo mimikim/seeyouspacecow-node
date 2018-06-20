@@ -1,0 +1,86 @@
+body.contact {
+  @include starry-bg( right bottom, 50% 80% );
+
+  > .site-main {
+    align-items: center;
+    color: $white;
+    display: flex;
+    height: calc( 90vh - 90px );
+    justify-content: center;
+    margin-top: 120px;
+    text-align: center;
+  }
+}
+
+.contact-headline {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.contact-form {
+  display: block;
+  font-weight: 500;
+  margin: auto;
+  max-width: 400px;
+
+  > label {
+    display: none;
+  }
+
+  > textarea {
+    min-height: 150px;
+  }
+
+  .input {
+    background: rgba( $white, 0.7 );
+    border: 8px solid $black;
+    border-radius: 15px;
+    box-shadow: inset 6px -6px 0 1px rgba( $black, 0.3 ),
+                inset -6px 6px 0 1px rgba( $white, 0.5 );
+    color: black;
+    font-family: $sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    padding: 15px 15px 20px;
+    transition: background 0.1s, box-shadow 0.1s;
+    width: 100%;
+
+    &:active,
+    &:focus,
+    &:hover {
+      background: rgba( $white, 1 );
+      box-shadow: inset 3px -3px 0 1px rgba( $black, 0.3 ),
+                  inset -6px 6px 0 1px rgba( $white, 0.5 );
+    }
+
+    &.filled {
+      background: $white;
+    }
+
+    &.error {
+      border-color: $red-shirt;
+    }
+  }
+
+  .error-message {
+    color: $red-shirt;
+    display: block;
+    margin-bottom: 16px;
+    text-shadow: 1px 1px 2px rgba( $black, 0.6 );
+  }
+
+  .submit {
+    box-shadow: inset 6px -6px 0 1px rgba( $black, 0.3 ),
+                inset -6px 6px 0 1px rgba( $white, 0.5 );
+    font-size: 20px;
+
+    &:active,
+    &:focus,
+    &:hover {
+      box-shadow: inset 3px -3px 0 1px rgba( $black, 0.3 ),
+                  inset -6px 6px 0 1px rgba( $white, 0.5 );
+    }
+  }
+}
+

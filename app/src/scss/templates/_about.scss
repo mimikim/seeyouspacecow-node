@@ -1,0 +1,16 @@
+body.about {
+  @include starry-bg( left top, 50% 20% );
+}
+
+.happycow {
+  background: url( '../img/harvestmoon-cow-tail-wag.png' ) 0 100% no-repeat;
+  height: 132px;
+  width: 162px;
+  margin: 0 auto 20px;
+  animation: tail-wagging 1s steps(2) infinite;
+
+  @media ( min-width: $small ) {
+    float: right;
+    margin-left: 20px;
+  }
+}

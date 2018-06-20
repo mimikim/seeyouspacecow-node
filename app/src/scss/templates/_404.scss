@@ -1,0 +1,5 @@
+body.error {
+  @include starry-bg( 0 0, 50% 20% );
+  color: $white;
+}
+

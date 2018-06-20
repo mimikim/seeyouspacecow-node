@@ -1,0 +1,22 @@
+<div class="container">
+
+  <h1 class="page-title">Portfolio</h1>
+  <span class="category-filters">Filter by Category:</span>
+  <nav class="category-navigation" id="js-portfolio-filters">
+    <button class="button" data-type="email" data-track data-category="Category Filter" data-action="Clicked Filter" data-label="HTML Email">HTML Email</button>
+    <button class="button" data-type="project" data-track data-category="Category Filter" data-action="Clicked Filter" data-label="Projects">Projects</button>
+    <button class="button" data-type="static" data-track data-category="Category Filter" data-action="Clicked Filter" data-label="Static Site">Static Site</button>
+    <button class="button" data-type="wordpress" data-track data-category="Category Filter" data-action="Clicked Filter" data-label="WordPress">WordPress</button>
+  </nav>
+
+  <button id="js-reset" class="button" data-track data-category="Category Filter" data-action="Reset Filters" data-label="">Reset All</button>
+
+  <section id="js-portfolio-results" class="portfolio-container">
+
+    {{#each portfolioThumbs}}
+      {{> portfolio-thumb}}
+    {{/each}}
+
+  </section>
+
+</div>

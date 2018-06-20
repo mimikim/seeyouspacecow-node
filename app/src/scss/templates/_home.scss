@@ -1,0 +1,61 @@
+body.home {
+  @include starry-bg;
+  height: 100vh;
+
+  > .site-main {
+    height: 100vh;
+    margin-top: 0;
+    width: 100%;
+  }
+
+  .home-link {
+    visibility: hidden;
+  }
+}
+
+.home-container {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+
+  @media ( min-width: $medium ) {
+    min-height: 700px;
+  }
+}
+
+.home-heading {
+  animation: fade-in 0.7s cubic-bezier( 0.550, 0.085, 0.680, 0.530 );
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  width: 320px;
+
+  @media( min-width: $medium ) {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    position: fixed;
+    width: auto;
+    z-index: -1;
+  }
+}
+
+.home-heading > .text {
+  color: white;
+  font-size: 50px;
+  letter-spacing: 6px;
+  line-height: normal;
+  margin: 40px auto 20px;
+  text-align: center;
+  text-shadow: 1px 1px 2px #222;
+
+  @media( min-width: $medium ) {
+    font-size: 78px;
+    margin-bottom: 60px;
+    margin-top: 0;
+  }
+}

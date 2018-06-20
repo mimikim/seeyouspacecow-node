@@ -1,0 +1,61 @@
+html {
+  height: 100%;
+}
+
+body {
+  -ms-overflow-style: scrollbar;
+  font-family: $sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 0;
+  min-width: 320px;
+  padding: 0;
+  position: relative;
+}
+
+body.opened {
+  overflow: hidden;
+
+  .site-main {
+    transform: translateX( 200px ) scale( 1.4 );
+  }
+}
+
+.site-main {
+  margin-top: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
+  transition: transform 0.4s;
+}
+
+.bg-starfield {
+  display: block;
+  position: fixed;
+  top: 0;
+  z-index: -2;
+}
+
+.content-container {
+  background: rgba( $white, 0.85 );
+  border: 8px solid black;
+  border-radius: 40px;
+  font-size: 22px;
+  margin: 20px auto 60px;
+  max-width: 992px;
+  padding: 20px 20px 60px;
+
+  @media ( min-width: $small ) {
+    font-size: 24px;
+  }
+
+  @media ( min-width: $medium ) {
+    font-size: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+
+    p {
+      text-indent: 60px;
+    }
+  }
+}
+

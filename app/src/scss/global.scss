@@ -1,0 +1,23 @@
+// resets styles
+@import 'global/normalize';
+
+// globals
+@import 'global/fonts';
+@import 'global/icon-font';
+@import 'global/variables';
+@import 'global/animations';
+@import 'global/typography';
+@import 'global/utility';
+@import 'global/mixins';
+
+// templates
+@import 'templates/base';
+
+// components
+@import 'components/buttons';
+@import 'components/header';
+@import 'components/footer';
+@import 'components/nav-toggle';
+
+// svgs
+@import 'svg/star';
