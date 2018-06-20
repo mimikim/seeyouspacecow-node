@@ -3,7 +3,7 @@ node version of my portfolio website
 
 [seeyouspacecow.com](http://seeyouspacecow.com)
 
-es6 js, postcss, nodejs, express, handlebars, grunt, bower
+es6 js, sass, nodejs, express, handlebars, grunt, bower
 
 ### To use:
 
