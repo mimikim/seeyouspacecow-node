@@ -9,7 +9,7 @@ es6 js, postcss, nodejs, express, handlebars, grunt, bower
 
 `bower install`
 
-`gulp`
+`grunt`
 
 `npm start`
 
