@@ -17,12 +17,22 @@ body.portfolio {
 
   > .button {
     background: $gold-shirt;
+    border-width: 6px;
+    font-size: 20px;
     margin-bottom: 10px;
     margin-right: 20px;
+
+    padding: 15px 15px;
 
     &.active {
       background: $blue-shirt;
       box-shadow: inset 2px -4px 0 1px rgba( $black, 0.5 ), inset -4px 4px 0 1px rgba( #ffffff, 0.8 );
+    }
+
+    @media ( min-width: $medium ) {
+      border-width: 8px;
+      font-size: 25px;
+      padding: 20px 30px;
     }
   }
 }
@@ -82,5 +92,3 @@ body.portfolio {
     flex-basis: calc( 33% - 26px );
   }
 }
-
-
