@@ -13,7 +13,7 @@ app/src/img/portfolio
 app/src/img/about
 
 app/includes/config/auth.js
-app/includes/config/portfolio-items
+app/includes/config/portfolio-items/*
 app/includes/config/portfolio-items/index.js
 
 
