@@ -18,14 +18,14 @@ module.exports = {
   },
   'about': {
     title: 'About',
-    description: 'About Mimi Kim: a space cowboy; a programming enthusiast; an internet denizen. I am a robot bovine alien.',
+    description: 'About Mimi Kim: a space cowboy, a programming enthusiast, an internet denizen, and a robot bovine alien.',
     class: 'about',
     hasScript: true,
     hasStyle: true
   },
   'contact': {
     title: 'Contact',
-    description: 'Contact Mimi Kim, web developer. Feel free to get in touch any time for questions, freelance opportunities, or just to say hello! See you, space cow.',
+    description: 'Contact Mimi Kim, web developer. Feel free to get in touch any time for questions, work opportunities, or just to say hello! See you, space cow.',
     class: 'contact',
     hasScript: true,
     hasStyle: true
