@@ -1,13 +1,13 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var fs = require('fs');
+let createError = require('http-errors');
+let express = require('express');
+let path = require('path');
+let cookieParser = require('cookie-parser');
+let logger = require('morgan');
 
-var app = express();
+let app = express();
 
 // view engine setup
+// utilize handlebars partials inside /views/
 app.set('views', path.join(__dirname, './views'));
 app.set('view engine', 'hbs');
 
@@ -17,10 +17,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 
-// register partials
+// register handlebar partials
 require('./includes/register-partials')();
 
-// set pages
+// set up pages
 app.use( require('./includes/routes') );
 
 // set email endpoint

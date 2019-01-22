@@ -1,13 +1,15 @@
 {
   "name": "seeyouspacecow-node",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "See You Space Cow portfolio site",
   "private": true,
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server",
-    "build": "grunt build"
+    "start": "npm run packages && npm run build && npm run server",
+    "server": "node server",
+    "build": "grunt build",
+    "packages": "npm install && bower install",
+    "watch": "grunt watch"
   },
   "repository": {
     "type": "git",
@@ -25,7 +27,7 @@
     "express": "^4.16.3",
     "hbs": "~4.0.1",
     "http-errors": "~1.6.2",
-    "morgan": "~1.9.0",
+    "morgan": "~1.9.1",
     "nodemailer": "^4.6.7"
   },
   "devDependencies": {

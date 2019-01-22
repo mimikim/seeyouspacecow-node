@@ -1,12 +1,15 @@
+// application endpoints (pages)
+
 let config = require('./config/pages');
-let portfolioConfig = require('./config/portfolio-items');
+let portfolioConfig = require('./config/portfolio');
+
 let express = require('express');
 let router = express.Router();
 
 // for each page in routes config
 for( let route in config ) {
   let name = route;
-  let options = config[route];
+  let options = config[name];
 
   if ( name === 'index' ) {
     router.get('/', function(req, res, next) {
