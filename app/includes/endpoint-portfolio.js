@@ -1,5 +1,5 @@
-// returns all portfolio info
-const portfolioConfig = require('./config/portfolio-items/');
+// returns all portfolio info (portfolio api)
+const portfolioConfig = require('./config/portfolio');
 
 let express = require('express');
 let router = express.Router();
