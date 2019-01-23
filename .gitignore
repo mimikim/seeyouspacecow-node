@@ -14,6 +14,6 @@ app/src/img/portfolio
 app/includes/config/auth.js
 app/includes/config/portfolio-items/*
 
-
+app/views/partial/analytics.hbs
 
 workflow.txt
