@@ -30,29 +30,17 @@ for( let route in config ) {
 }
 
 // generate portfolio item content
-// TODO: FIX ME, FFS
-const fs = require('fs');
-const path = require('path');
-const itemsPath = path.join(__dirname, '/config/portfolio-items/');
-let portfolioConfig = [];
+const portfolioConfig = require('./config/portfolio');
 
-fs.readdir( itemsPath, ( err, files ) => {
-  files.forEach( file => {
-      let name = file.replace('.js', '');
-      portfolioConfig.push( require( './config/portfolio-items/' + name ) );
-    }
-  );
+portfolioConfig.forEach( function( elm ) {
+  let options = elm;
+  options.class = 'portfolio-item';
+  options.hasScript = true;
+  options.hasStyle = true;
+  options.title = options.name;
 
-  portfolioConfig.forEach( function( elm ) {
-    let options = elm;
-    options.class = 'portfolio-item';
-    options.hasScript = true;
-    options.hasStyle = true;
-    options.title = options.name;
-
-    router.get('/portfolio/' + elm.url, function(req, res, next) {
-      res.render( 'portfolio-item', options );
-    });
+  router.get('/portfolio/' + elm.url, function(req, res, next) {
+    res.render( 'portfolio-item', options );
   });
 });
 

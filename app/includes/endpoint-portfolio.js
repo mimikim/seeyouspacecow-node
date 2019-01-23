@@ -1,16 +1,14 @@
 // returns all portfolio info (portfolio api)
 const portfolioConfig = require('./config/portfolio');
-
-let express = require('express');
-let router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 router.post('/endpoint/portfolio', function(req, res, next) {
   let items = portfolioConfig;
-  let data = req.body['types'];
 
   // returns filtered portfolio items
-  if ( data !== undefined ) {
-    let selectedTypes = JSON.parse( data );
+  if ( req.body['types'] !== undefined ) {
+    let selectedTypes = req.body['types'].split(',');
 
     items = portfolioConfig.filter( elm => {
       let flag = false;
@@ -25,7 +23,6 @@ router.post('/endpoint/portfolio', function(req, res, next) {
       if ( flag ) {
         return elm;
       }
-
     });
   }
 

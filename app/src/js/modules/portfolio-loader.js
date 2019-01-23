@@ -64,15 +64,23 @@ export class PortfolioLoader {
       let xhr = new XMLHttpRequest();
       let types = '';
 
-      xhr.onload = function() {
-        if ( this.readyState === 4 && this.status === 200 ) {
+      xhr.onload = () => {
+        if ( xhr.readyState === 4 && xhr.status === 200 ) {
           resolve( xhr.responseText );
+        } else {
+          reject(new Error('error thrown'));
         }
       };
 
       if ( this.active_buttons.length > 0 ) {
-        types = 'types=' + JSON.stringify( this.active_buttons );
+        types = 'types=';
+
+        this.active_buttons.forEach( button => {
+          types += button + ',';
+        } );
       }
+
+      types = types.slice( 0, -1 );
 
       xhr.open( 'POST', this.endpoint, true );
       xhr.setRequestHeader( 'Content-type', 'application/x-www-form-urlencoded' );
@@ -110,6 +118,9 @@ export class PortfolioLoader {
 
       // run lazy loading again
       this.lazyLoader.init();
-    } );
+    } )
+    .catch(function (error) {
+      // console.log(error);
+    });
   }
 }
