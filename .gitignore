@@ -10,11 +10,10 @@ public/svg
 
 app/src/vendor
 app/src/img/portfolio
-app/src/js/modules/analytics.js
 
 app/includes/config/auth.js
 app/includes/config/portfolio-items/*
 
-app/views/partial/analytics.hbs
+
 
 workflow.txt
