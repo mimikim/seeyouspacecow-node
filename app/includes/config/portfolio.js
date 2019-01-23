@@ -2,19 +2,15 @@
 
 const fs = require('fs');
 const path = require('path');
-const itemsPath = path.join(__dirname, '/portfolio-items/');
+const files = fs.readdirSync( path.join(__dirname, '/portfolio-items/') );
 
 let data = [];
 
-// read directory asynchronously using fs
-fs.readdir( itemsPath, ( err, files ) => {
-
-  // for each file, push into data array
-  files.forEach( file => {
-      let name = file.replace('.js', '');
-      data.push( require( './portfolio-items/' + name ) );
-    }
-  );
-});
+// for each file in directory, push into data array
+files.forEach( file => {
+    let name = file.replace('.js', '');
+    data.push( require( './portfolio-items/' + name ) );
+  }
+);
 
 module.exports = data;
