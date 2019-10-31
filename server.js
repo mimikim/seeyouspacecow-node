@@ -40,7 +40,6 @@ function onError(error) {
   }
 }
 
-
 function onListening() {
   let addr = server.address();
   let bind = typeof addr === 'string'
@@ -48,4 +47,3 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
-

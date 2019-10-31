@@ -1,0 +1,13 @@
+<ol class="breadcrumb">
+    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+        <a href="/" itemprop="url"><span itemprop="title">Home</span></a>
+    </li>
+    {{#with type}}
+        <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+            <a href="/portfolio" itemprop="url"><span itemprop="title">Portfolio</span></a>
+        </li>
+    {{/with}}
+    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+        <span itemprop="title">{{title}}</span>
+    </li>
+</ol>

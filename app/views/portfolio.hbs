@@ -1,22 +1,32 @@
 <div class="container">
+    <h1 class="page-title">Portfolio</h1>
+    {{> breadcrumb this }}
 
-  <h1 class="page-title">Portfolio</h1>
-  <span class="category-filters">Filter by Category:</span>
-  <nav class="category-navigation" id="js-portfolio-filters">
-    <button class="button" data-type="email" data-track data-category="Category Filter" data-action="Clicked Filter" data-label="HTML Email">HTML Email</button>
-    <button class="button" data-type="project" data-track data-category="Category Filter" data-action="Clicked Filter" data-label="Projects">Projects</button>
-    <button class="button" data-type="static" data-track data-category="Category Filter" data-action="Clicked Filter" data-label="Static Site">Static Site</button>
-    <button class="button" data-type="wordpress" data-track data-category="Category Filter" data-action="Clicked Filter" data-label="WordPress">WordPress</button>
-  </nav>
+    <nav class="category-navigation" id="js-portfolio-filters">
+        <span class="category-filters">Filters:</span>
+        <button class="button" data-type="javascript" data-track data-category="Category Filter" data-action="Clicked Filter" data-label="JavaScript">JavaScript</button>
+        <button class="button" data-type="html" data-track data-category="Category Filter" data-action="Clicked Filter" data-label="HTML">HTML</button>
+        <button class="button" data-type="css" data-track data-category="Category Filter" data-action="Clicked Filter" data-label="CSS">CSS</button>
+        <button class="button" data-type="php" data-track data-category="Category Filter" data-action="Clicked Filter" data-label="PHP">PHP</button>
+        <button class="button" data-type="nodejs" data-track data-category="Category Filter" data-action="Clicked Filter" data-label="NodeJS">NodeJS</button>
+        <button class="button" data-type="reactjs" data-track data-category="Category Filter" data-action="Clicked Filter" data-label="ReactJS">ReactJS</button>
+        <button class="button" data-type="angular" data-track data-category="Category Filter" data-action="Clicked Filter" data-label="Angular">Angular</button>
+        <button class="button" data-type="wordpress" data-track data-category="Category Filter" data-action="Clicked Filter" data-label="WordPress">WordPress</button>
+        <button class="button" data-type="canvas" data-track data-category="Category Filter" data-action="Clicked Filter" data-label="Canvas">Canvas</button>
+        <button class="button" data-type="static" data-track data-category="Category Filter" data-action="Clicked Filter" data-label="Static Site">Static Site</button>
+        <button class="button" data-type="email" data-track data-category="Category Filter" data-action="Clicked Filter" data-label="HTML Email">HTML Email</button>
+        <button class="button" data-type="project" data-track data-category="Category Filter" data-action="Clicked Filter" data-label="Projects">Personal</button>
+    </nav>
 
-  <button id="js-reset" class="button" data-track data-category="Category Filter" data-action="Reset Filters" data-label="">Reset All</button>
+    <button id="js-reset" class="button category-reset" data-track data-category="Category Filter" data-action="Reset Filters" data-label="">Reset All Filters</button>
 
-  <section id="js-portfolio-results" class="portfolio-container">
-
-    {{#each portfolioThumbs}}
-      {{> portfolio-thumb}}
-    {{/each}}
-
-  </section>
+    <section class="portfolio-results">
+        <h2 class="screen-reader-text">Portfolio Results</h2>
+        <div id="js-portfolio-results" class="portfolio-container">
+            {{#each portfolioThumbs}}
+                {{> portfolio-thumb}}
+            {{/each}}
+        </div>
+    </section>
 
 </div>

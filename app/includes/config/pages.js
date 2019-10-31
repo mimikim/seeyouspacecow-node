@@ -1,9 +1,8 @@
 // config options for all routes
-
 module.exports = {
   'index': {
     title: 'See You Space Cow',
-    description: 'The personal website and work portfolio for space cowboy and development engineer, Mimi Kim. Easy and informative blog tutorials for anyone interested in web development!',
+    description: 'The personal website and work portfolio for space cowboy and web development engineer, Mimi Kim.',
     class: 'home',
     hasScript: true,
     hasStyle: true
@@ -32,7 +31,7 @@ module.exports = {
   },
   'blog': {
     title: 'Blog',
-    description: '',
+    description: 'Mimi Kim\'s blog. A collection of thoughts, images, recipes, on-going projects, and tutorials.',
     class: 'blog',
     hasScript: true,
     hasStyle: true

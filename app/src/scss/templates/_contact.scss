@@ -5,14 +5,19 @@ body.contact {
     align-items: center;
     color: $white;
     display: flex;
-    height: calc( 90vh - 90px );
     justify-content: center;
     margin-top: 120px;
     text-align: center;
+
+    @media ( min-height : 600px ) {
+      height: calc( 90vh - 90px );
+    }
   }
 }
 
 .contact-headline {
+  color: $white;
+  font-size: 2em;
   margin-bottom: 20px;
   position: relative;
 }
@@ -22,6 +27,18 @@ body.contact {
   font-weight: 500;
   margin: auto;
   max-width: 400px;
+
+  ::placeholder {
+    color: rgba( $black, 0.7 );
+  }
+
+  :-ms-input-placeholder {
+    color: rgba( $black, 0.7 );
+  }
+
+  :-ms-input-placeholder {
+    color: rgba( $black, 0.7 );
+  }
 
   > label {
     display: none;
@@ -33,11 +50,11 @@ body.contact {
 
   .input {
     background: rgba( $white, 0.7 );
-    border: 8px solid $black;
+    border: 8px solid $black-true;
     border-radius: 15px;
-    box-shadow: inset 6px -6px 0 1px rgba( $black, 0.3 ),
+    box-shadow: inset 6px -6px 0 1px rgba( $black-true, 0.3 ),
                 inset -6px 6px 0 1px rgba( $white, 0.5 );
-    color: black;
+    color: $black;
     font-family: $sans-serif;
     font-size: 20px;
     font-weight: 500;
@@ -50,7 +67,7 @@ body.contact {
     &:focus,
     &:hover {
       background: rgba( $white, 1 );
-      box-shadow: inset 3px -3px 0 1px rgba( $black, 0.3 ),
+      box-shadow: inset 3px -3px 0 1px rgba( $black-true, 0.3 ),
                   inset -6px 6px 0 1px rgba( $white, 0.5 );
     }
 
@@ -67,20 +84,19 @@ body.contact {
     color: $red-shirt;
     display: block;
     margin-bottom: 16px;
-    text-shadow: 1px 1px 2px rgba( $black, 0.6 );
+    text-shadow: 1px 1px 2px rgba( $black-true, 0.6 );
   }
 
   .submit {
-    box-shadow: inset 6px -6px 0 1px rgba( $black, 0.3 ),
+    box-shadow: inset 6px -6px 0 1px rgba( $black-true, 0.3 ),
                 inset -6px 6px 0 1px rgba( $white, 0.5 );
     font-size: 20px;
 
     &:active,
     &:focus,
     &:hover {
-      box-shadow: inset 3px -3px 0 1px rgba( $black, 0.3 ),
+      box-shadow: inset 3px -3px 0 1px rgba( $black-true, 0.3 ),
                   inset -6px 6px 0 1px rgba( $white, 0.5 );
     }
   }
 }
-

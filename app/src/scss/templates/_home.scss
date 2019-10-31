@@ -2,10 +2,18 @@ body.home {
   @include starry-bg;
   height: 100vh;
 
+  @media ( max-height: 499px ) {
+    height: auto;
+  }
+
   > .site-main {
     height: 100vh;
     margin-top: 0;
     width: 100%;
+
+    @media ( max-height: 499px ) {
+      height: auto;
+    }
   }
 
   .home-link {
@@ -19,8 +27,13 @@ body.home {
   height: 100vh;
   justify-content: center;
 
-  @media ( min-width: $medium ) {
-    min-height: 700px;
+  @media screen and ( min-width: $medium ) {
+    min-height: 400px;
+  }
+
+  @media ( max-height: 499px ) {
+    height: auto;
+    min-height: 550px;
   }
 }
 
@@ -31,16 +44,19 @@ body.home {
   position: relative;
   width: 320px;
 
-  @media( min-width: $medium ) {
+  @media screen and ( min-width: $medium ) {
     align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: center;
     padding-left: 30px;
     padding-right: 30px;
-    position: fixed;
     width: auto;
     z-index: -1;
+  }
+
+  @media screen and ( min-width: $medium ) and ( min-height: 500px ) {
+    position: fixed;
   }
 }
 
@@ -51,9 +67,9 @@ body.home {
   line-height: normal;
   margin: 40px auto 20px;
   text-align: center;
-  text-shadow: 1px 1px 2px #222;
+  text-shadow: 2px 2px 4px $black-true;
 
-  @media( min-width: $medium ) {
+  @media screen and ( min-width: $medium ) {
     font-size: 78px;
     margin-bottom: 60px;
     margin-top: 0;

@@ -20,7 +20,7 @@ export class PortfolioLoader {
         this.container_div.innerHTML = '';
         button.classList.toggle( 'active' );
         this.maybe_add_button( button );
-        this.api_call();
+        this.call_api();
       } );
     } );
 
@@ -42,7 +42,7 @@ export class PortfolioLoader {
         button.classList.remove( 'active' );
       } );
 
-      this.api_call();
+      this.call_api();
     }
   };
 
@@ -59,7 +59,7 @@ export class PortfolioLoader {
     }
   }
 
-  api_call() {
+  call_api() {
     let promise = new Promise( ( resolve, reject ) => {
       let xhr = new XMLHttpRequest();
       let types = '';
@@ -91,8 +91,7 @@ export class PortfolioLoader {
     promise.then( response => {
       this.container_div.innerHTML = '';
 
-      JSON.parse( response ).forEach( ( { name, url, thumb } ) => {
-
+      JSON.parse( response ).forEach( ( { name, url, thumb, folder } ) => {
         let element = document.createElement('a');
         element.href = '/portfolio/' + url + '/';
         element.classList.add( 'item', 'fade-in' );
@@ -101,7 +100,7 @@ export class PortfolioLoader {
         let imgElm = document.createElement('img');
         imgElm.src = '/img/placeholder.png';
         imgElm.classList.add( 'responsive', 'lazyload' );
-        imgElm.dataset.src = thumb;
+        imgElm.dataset.src = `/img/portfolio/${folder}/${thumb}`;
         imgElm.setAttribute( 'alt', 'portfolio thumbnail picture for ' + name );
 
         let figure = document.createElement('figure');
@@ -120,7 +119,7 @@ export class PortfolioLoader {
       this.lazyLoader.init();
     } )
     .catch(function (error) {
-      // console.log(error);
+      console.log(error);
     });
   }
 }

@@ -16,7 +16,7 @@
 
   &.fixed {
     background: rgba( $white, .95 );
-    box-shadow: 0 5px 10px -2px rgba( $black, 0.2 );
+    box-shadow: 0 5px 10px -2px rgba( $black-true, 0.2 );
     height: 70px;
 
     .home-link {
@@ -34,6 +34,10 @@
     height: 100vh;
     opacity: 1;
     transform: translateX( 200px);
+
+    @media ( max-height: 500px ) {
+      overflow: auto;
+    }
   }
 
   .main-navigation {
@@ -41,6 +45,10 @@
     margin-left: auto;
     margin-right: auto;
     max-width: 1200px;
+
+    @media ( max-height: 499px ) {
+      min-height: 400p
+    }
   }
 }
 
@@ -62,7 +70,7 @@
     opacity: 0.7;
   }
 
-  @media ( min-width: $tiny ) {
+  @media screen and ( min-width: $tiny ) {
     font-size: 20px;
     letter-spacing: 1px;
   }
@@ -104,14 +112,6 @@
   padding-top: 15px;
   padding-bottom: 15px;
 
-  &:hover, &:focus, &:active {
-    transform: scale( 1.2 );
-
-    a {
-      text-shadow: none;
-    }
-  }
-
   img {
     max-width: 100%;
     width: 100%;
@@ -126,7 +126,14 @@
     text-decoration: none;
     text-shadow: 1px 1px 2px $black;
 
-    @media ( min-width: $medium ) {
+    &:hover,
+    &:focus,
+    &:active {
+      text-shadow: none;
+      animation: jelly 0.9s;
+    }
+
+    @media screen and ( min-width: $medium ) {
       font-size: 60px;
     }
   }

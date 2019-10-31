@@ -1,12 +1,12 @@
-const urls = require('../config');
+const img = require('../config').paths.img;
 
 module.exports = {
   dynamic: {
     files: [ {
       expand: true,
-      cwd: urls.img.src,
+      cwd: img.src,
       src: [ '**/*.{png,jpg,gif}' ],
-      dest: urls.img.dist
+      dest: img.dist
     } ]
   }
 };

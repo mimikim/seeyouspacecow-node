@@ -27,7 +27,7 @@
   padding-right: 15px;
   width: 100%;
 
-  @media ( min-width: $medium ) {
+  @media screen and ( min-width: $medium ) {
     padding-left: 30px;
     padding-right: 30px;
   }

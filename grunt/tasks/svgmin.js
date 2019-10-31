@@ -1,4 +1,5 @@
-const url = require('../config');
+const svg = require('../config').paths.svg;
+
 module.exports = {
   options: {
     plugins: [
@@ -11,9 +12,9 @@ module.exports = {
     files: [
       {
         expand: true,
-        cwd: url.svg.src,
+        cwd: svg.src,
         src: [ '*.svg' ],
-        dest: url.svg.dist
+        dest: svg.dist
       }
     ]
   }

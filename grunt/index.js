@@ -1,10 +1,16 @@
-// returns all task options
-module.exports = tasks => {
-  let configOptions = {};
+// returns all task options defined inside /tasks/
 
-  tasks.forEach( name => {
-    configOptions[name] = require( './tasks/' + name );
-  });
+const fs = require('fs');
+const path = require('path');
+let configOptions = {};
 
-  return configOptions;
-};
+const files = fs.readdirSync( path.join(__dirname, '/tasks/') );
+const tasks = files.map( file => {
+  return file.replace('.js', '');
+} );
+
+tasks.forEach( name => {
+  configOptions[name] = require( './tasks/' + name );
+});
+
+module.exports = configOptions;

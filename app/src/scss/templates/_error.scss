@@ -1,0 +1,48 @@
+body.error {
+  @include starry-bg( 0 0, 50% 20% );
+  color: $white;
+}
+
+.error-content {
+  font-size: 24px;
+  margin: auto;
+  max-width: 600px;
+  padding-top: 40px;
+  text-align: center;
+
+  @media screen and ( min-width: $medium ) {
+    align-items: center;
+    display: flex;
+    font-size: 30px;
+    max-width: 700px;
+    padding-top: 0;
+
+    .text {
+      flex-basis: 450px;
+    }
+
+    .cow-sitting-svg {
+      flex-basis: 250px;
+    }
+  }
+
+  .text p {
+    margin-top: 0;
+  }
+
+  a {
+    color: $white;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $strawberry;
+    }
+  }
+}
+
+.error-title {
+  color: $white;
+  font-size: 1.5em;
+  margin: 0 auto;
+}

@@ -10,14 +10,13 @@
 @import 'global/utility';
 @import 'global/mixins';
 
-// templates
-@import 'templates/base';
-
 // components
 @import 'components/buttons';
 @import 'components/header';
 @import 'components/footer';
 @import 'components/nav-toggle';
+@import 'components/skip-links';
+@import 'components/breadcrumb';
 
-// svgs
-@import 'svg/star';
+// templates
+@import 'templates/base';

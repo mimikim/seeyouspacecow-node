@@ -4,10 +4,9 @@ body.portfolio {
 
 .page-title {
   color: $white;
-  font-size:50px;
+  font-size: 50px;
   letter-spacing: 3px;
   line-height: normal;
-  margin-top: 100px;
   text-align: center;
 }
 
@@ -15,25 +14,19 @@ body.portfolio {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
+  margin: 20px 0 10px;
 
   > .button {
     background: $gold-shirt;
-    border-width: 6px;
-    font-size: 20px;
-    margin-bottom: 10px;
-    margin-right: 20px;
-
-    padding: 15px 15px;
+    border-width: 5px;
+    font-size: 18px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    padding: 14px 15px;
 
     &.active {
       background: $blue-shirt;
-      box-shadow: inset 2px -4px 0 1px rgba( $black, 0.5 ), inset -4px 4px 0 1px rgba( #ffffff, 0.8 );
-    }
-
-    @media ( min-width: $medium ) {
-      border-width: 8px;
-      font-size: 25px;
-      padding: 20px 30px;
+      box-shadow: inset 2px -4px 0 1px rgba( $black-true, 0.5 ), inset -4px 4px 0 1px rgba( #ffffff, 0.8 );
     }
   }
 }
@@ -42,33 +35,27 @@ body.portfolio {
   color: $white;
   display: block;
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-right: 20px;
 }
 
 .portfolio-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   max-width: $large;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 30px;
-  padding-bottom: 150px;
-
-  &:after {
-    content: '';
-    flex: auto;
-  }
+  margin: 30px auto 0;
 }
 
 .portfolio-container > .item {
   background: $white;
-  border: 8px solid $black;
+  border: 8px solid $black-true;
   border-radius: 30px;
   cursor: pointer;
   flex-basis: 100%;
   font-weight: 500;
-  margin: 10px;
+  margin-bottom: 30px;
   overflow: hidden;
   position: relative;
   text-decoration: none;
@@ -85,11 +72,12 @@ body.portfolio {
     top: 8px;
   }
 
-  @media ( min-width: 600px ) {
+  @media screen and ( min-width: 600px ) {
     flex-basis: calc( 50% - 26px );
+    margin: 10px;
   }
 
-  @media ( min-width: $medium ) {
+  @media screen and ( min-width: 800px ) {
     flex-basis: calc( 33% - 26px );
   }
 }

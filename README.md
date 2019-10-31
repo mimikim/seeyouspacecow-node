@@ -1,5 +1,5 @@
 # seeyouspacecow-node
-node (w/ express) application version of my portfolio website
+node (w/ express) application version of my portfolio website, edited for github. 
 
 [seeyouspacecow.com](https://seeyouspacecow.com)
 
@@ -33,9 +33,9 @@ development is compiled with grunt tasks, which are defined inside the `/grunt/`
 
 vendor packages managed with bower
 
-this is a test migration to node (from php) as my primary backend language, see how it goes
-
 routes for each page are defined inside `/app/includes/config/` and executed inside `/app/includes/routes.js`
+
+endpoints have been created to access portfolio items, run the email functionality, or display an image carousel
 
 each page has its own respective js and css files, apart from globals
 
@@ -43,16 +43,18 @@ each page has its own respective js and css files, apart from globals
 
 I have a few files ignored in the repository simply for the sake of keeping data private, as well as extraneous things that aren't necessarily needed for understanding or compiling the codebase.
 
-Files excluded are:
+This is not an exact replica of the codebase as it currently exists on my site but contains all the important bits.
 
-- all of the compiled asset files inside `/public/`
-- vendor files inside `app/src/vendor`, generated through bower
-- portfolio images inside `app/src/img/portfolio/`
-- portfolio content inside `app/includes/config/portfolio-items/`
-- google analytics script
+* The Contact Form does not work because I have not included my email authentication file! It works on the [live site](https://seeyouspacecow.com/contact) if you want to try it out though =)
 
 ## TODO: 
 
 Updates to come:
 
-- a fancy email template to be sent for when people actually use the contact form to contact me! :sob: :joy:
+- a fancy email template to be sent for when people actually use the contact form to contact me!
+
+## Release Notes: 
+
+- **v.1.13** Skip links, meta descriptions for each page and portfolio item, image carousels, breadcrumbs, an error 404 page, and print styles.
+- **v1.1.2** Introducing the Blog section, new 404 error page, css print styles, updating package dependency versions, slightly refactored Grunt setup, misc cleanups. Plus, gzip compression
+- **v1.0.0** Node version released!!

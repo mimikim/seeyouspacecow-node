@@ -7,6 +7,7 @@ export class Analytics {
 
     trackedElms.forEach( ( elm ) => {
       elm.addEventListener( 'click', function()  {
+        ga('create', 'GA CODE REMOVED FOR GITHUB REPO');
         ga('send', {
           hitType: 'event',
           eventCategory: elm.dataset.category,

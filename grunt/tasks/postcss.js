@@ -1,13 +1,16 @@
-const urls = require( '../config' );
+const css = require( '../config' ).paths.css;
 
 module.exports = {
   options: {
     processors: [
-      require( 'autoprefixer' )( { browsers: 'last 2 versions' } ),
-      require('postcss-svg')()
+      require( 'autoprefixer' )(),
+      require("css-mqpacker")({
+        sort: true
+      }),
+      require( 'cssnano' )
     ]
   },
   dist: {
-    src: urls.css.dist + '*.css'
+    src: css.dist + '*.css'
   }
 };

@@ -1,4 +1,11 @@
-<div class="">
-  <h1>{{message}}</h1>
-  <h2>{{error.status}}</h2>
+<div class="error-content">
+  <div class="text">
+    <h1 class="error-title">{{message}}: {{error.status}}</h1>
+    <p>
+      This page does not exist.
+      <br>
+      <a href="/" data-track data-category="404 Page" data-action="Clicked Homepage">Please return to the homepage!</a>
+    </p>
+  </div>
+  {{> svg-cow }}
 </div>

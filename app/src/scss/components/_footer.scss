@@ -2,7 +2,7 @@
   padding: 30px 30px 40px;
   text-align: center;
 
-  @media( min-width: $medium ) {
+  @media screen and ( min-width: $medium ) {
     text-align: right;
   }
 
@@ -10,7 +10,7 @@
     width: 100%;
     padding-top: 0;
 
-    @media( min-width: $medium ) {
+    @media screen and ( min-width: $medium ) {
       bottom: 0;
       padding-top: 30px;
       position: absolute;
@@ -20,7 +20,7 @@
   }
 }
 
-.social-links {
+.footer-links {
   list-style: none;
   padding-left: 0;
   margin-bottom: 0;
@@ -29,7 +29,7 @@
   > li {
       margin-bottom: 25px;
 
-    @media ( min-width: $small ) {
+    @media screen and ( min-width: $small ) {
       display: inline-block;
       margin-bottom: 0;
       margin-right: 40px;
@@ -48,6 +48,12 @@
     display: block;
     position: relative;
     text-decoration: none;
+
+    &:active,
+    &:focus,
+    &:hover {
+      animation: jelly 0.9s;
+    }
 
     body.home & {
       font-size: 20px;

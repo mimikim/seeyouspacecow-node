@@ -4,9 +4,10 @@ html {
 
 body {
   -ms-overflow-style: scrollbar;
+  color: $black;
   font-family: $sans-serif;
   font-size: 16px;
-  line-height: 1.4;
+  line-height: 1.5;
   margin: 0;
   min-width: 320px;
   padding: 0;
@@ -22,10 +23,13 @@ body.opened {
 }
 
 .site-main {
-  margin-top: 80px;
-  padding-left: 20px;
-  padding-right: 20px;
+  margin-top: 100px;
   transition: transform 0.4s;
+
+  @media screen and ( min-width: 600px ) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 .bg-starfield {
@@ -33,29 +37,40 @@ body.opened {
   position: fixed;
   top: 0;
   z-index: -2;
+  -webkit-transform: translate3d(0,0,0); // ios scrolling fix
 }
 
 .content-container {
   background: rgba( $white, 0.85 );
-  border: 8px solid black;
+  border: 8px solid $black-true;
   border-radius: 40px;
-  font-size: 22px;
-  margin: 20px auto 60px;
+  font-size: 18px;
+  margin: 20px auto 0;
   max-width: 992px;
-  padding: 20px 20px 60px;
+  padding: 20px 15px 60px;
 
-  @media ( min-width: $small ) {
+  @media screen and ( min-width: $small ) {
     font-size: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
-  @media ( min-width: $medium ) {
+  @media screen and ( min-width: $medium ) {
     font-size: 30px;
     padding-left: 40px;
     padding-right: 40px;
 
     p {
       text-indent: 60px;
+
+      &.no-indent {
+        text-indent: initial;
+      }
     }
+  }
+
+  p {
+    margin-bottom: 1.3em;
   }
 }
 

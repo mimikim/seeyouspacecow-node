@@ -3,14 +3,13 @@ body.portfolio-item {
 }
 
 .page-title {
-  color: $black;
+  color: $white;
   font-size: 35px;
   letter-spacing: 3px;
   line-height: normal;
-  margin-top: 25px;
   text-align: center;
 
-  @media ( min-width: 600px ) {
+  @media screen and ( min-width: 600px ) {
     font-size: 50px;
   }
 }

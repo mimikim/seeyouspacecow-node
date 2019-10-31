@@ -2,8 +2,9 @@
 @import 'global/variables';
 @import 'global/mixins';
 
+// components
+@import 'components/carousel';
+
 // templates
 @import 'templates/portfolio-item';
 
-// components
-@import 'components/slider';

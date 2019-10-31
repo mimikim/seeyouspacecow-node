@@ -1,4 +1,4 @@
-const jsPath = require('./helper').returnJS();
+const jsPath = require('../config').returnJS();
 
 const options = {
   options: {

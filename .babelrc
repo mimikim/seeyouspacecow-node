@@ -2,5 +2,5 @@
   "plugins": [
     "transform-class-properties"
   ],
-  "presets": ["env"]
+  "presets": ["@babel/preset-env"]
 }

@@ -8,7 +8,23 @@ h3,
 h4,
 h5,
 h6 {
+  color: $black-true;
   margin-top: 0;
+}
+
+.section-title {
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -6px;
+    right: -6px;
+    background: $black;
+    height: 6px;
+    border-radius: 10px;
+  }
 }
 
 a {

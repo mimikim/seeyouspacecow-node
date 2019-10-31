@@ -1,7 +1,7 @@
 // returns all portfolio info (portfolio api)
-const portfolioConfig = require('./config/portfolio');
 const express = require('express');
 const router = express.Router();
+const portfolioConfig = require('./config/portfolio');
 
 router.post('/endpoint/portfolio', function(req, res, next) {
   let items = portfolioConfig;

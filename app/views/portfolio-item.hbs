@@ -1,7 +1,10 @@
-
-<section class="content-container">
-  <h1 class="page-title">{{name}}</h1>
-  <div class="content">
-    {{{content}}}
-  </div>
-</section>
+<div class="container">
+    <h1 class="page-title">{{name}}</h1>
+    {{> carousel this }}
+    <section class="content-container">
+        {{> breadcrumb this }}
+        <div class="content">
+            {{{content}}}
+        </div>
+    </section>
+</div>

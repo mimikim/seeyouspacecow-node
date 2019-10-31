@@ -1,4 +1,4 @@
-const jsPath = require('./helper').returnJS();
+const jsPath = require('../config').returnJS();
 
 let options = {
   dist: {
@@ -6,7 +6,7 @@ let options = {
       transform: [
         [ 'babelify',
           {
-            'presets': ['env'],
+            'presets': ['@babel/preset-env'],
             'plugins': ['transform-class-properties'],
           }
         ]

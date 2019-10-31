@@ -1,9 +1,8 @@
 // email endpoint
-const creds = require('./config/auth');
-
-let express = require('express');
-let router = express.Router();
-let nodemailer = require('nodemailer');
+const express = require('express');
+const router = express.Router();
+const nodemailer = require('nodemailer');
+const creds = require('./config/login');
 
 // POST to create new object
 router.post('/endpoint/mail', function(req, res) {
