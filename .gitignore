@@ -9,5 +9,3 @@ public/js
 public/svg
 
 app/src/vendor
-app/src/img/portfolio
-app/views/partial/analytics.hbs

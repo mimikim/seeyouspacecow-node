@@ -55,6 +55,6 @@ Updates to come:
 
 ## Release Notes: 
 
-- **v.1.13** Skip links, meta descriptions for each page and portfolio item, image carousels, breadcrumbs, an error 404 page, and print styles.
+- **v1.1.3** Skip links, meta descriptions for each page and portfolio item, image carousels, breadcrumbs, an error 404 page, and print styles.
 - **v1.1.2** Introducing the Blog section, new 404 error page, css print styles, updating package dependency versions, slightly refactored Grunt setup, misc cleanups. Plus, gzip compression
 - **v1.0.0** Node version released!!
