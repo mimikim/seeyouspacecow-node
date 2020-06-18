@@ -2,19 +2,15 @@
 
 const app = require('./app/app');
 const http = require('http');
-let debug = require('debug')('testapp:server');
-
-// default http localhost
 const port = 8000;
 
 app.set('port', port);
 
 // creates server
 const server = http.createServer(app);
-
 server.listen(port);
 server.on('error', onError);
-server.on('listening', onListening);
+server.on( 'listening', onListening );
 
 function onError(error) {
   if (error.syscall !== 'listen') {
@@ -40,6 +36,7 @@ function onError(error) {
   }
 }
 
+let debug = require('debug')('testapp:server');
 function onListening() {
   let addr = server.address();
   let bind = typeof addr === 'string'

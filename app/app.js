@@ -3,12 +3,8 @@ let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
-let compression = require('compression');
 
 let app = express();
-
-// compress all requests
-app.use(compression());
 
 // view engine setup
 // utilize handlebars partials inside /views/

@@ -31,6 +31,13 @@
       margin-bottom: 0;
     }
   }
+
+  .text {
+    color: $white;
+    margin-top: 5px;
+    transition: color 0.1s;
+  }
+
 }
 
 .site-header.opened .nav-toggle {
@@ -38,24 +45,34 @@
     position: absolute;
     background: $white;
 
-    &:nth-of-type(2) {
+    &:nth-of-type(1) {
       transform: rotate( 45deg );
     }
 
-    &:nth-of-type(3) {
+    &:nth-of-type(2) {
       opacity: 0;
     }
 
-    &:nth-of-type(4) {
+    &:nth-of-type(3) {
       transform: rotate( -45deg );
     }
   }
+
+  .text {
+    display: none;
+  }
 }
 
-.site-header.fixed .nav-toggle > span.line {
-  margin-bottom: 7px;
+.site-header.fixed .nav-toggle {
+  > span.line {
+    margin-bottom: 7px;
 
-  &:nth-of-type(4) {
-    margin-bottom: 0;
+    &:nth-of-type(4) {
+      margin-bottom: 0;
+    }
+  }
+
+  .text {
+    color: $black;
   }
 }

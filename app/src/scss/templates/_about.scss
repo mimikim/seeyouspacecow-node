@@ -23,3 +23,26 @@ body.about {
     float: right;
   }
 }
+
+.babycow {
+  @media screen and ( min-width: $small ) {
+    background: url( '../img/harvestmoon-cow-baby-sleeping.png' ) 0 100% no-repeat;
+    height: 84px;
+    width: 144px;
+    margin: 0 20px 0 auto;
+    animation: cow-sleeping 2.5s steps(2) infinite;
+    float: left;
+    transform: scaleX( -1 );
+  }
+}
+
+.chickenflap {
+  @media screen and ( min-width: $small ) {
+    background: url( '../img/chicken-moving-front.png' ) 0 100% no-repeat;
+    height: 80px;
+    width: 80px;
+    margin: 0 20px 0 auto;
+    animation: chicken-flap 0.8s steps(2) infinite;
+    float: left;
+  }
+}

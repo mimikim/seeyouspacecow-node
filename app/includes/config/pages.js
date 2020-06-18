@@ -1,7 +1,7 @@
 // config options for all routes
 module.exports = {
   'index': {
-    title: 'See You Space Cow',
+    title: 'Home',
     description: 'The personal website and work portfolio for space cowboy and web development engineer, Mimi Kim.',
     class: 'home',
     hasScript: true,
