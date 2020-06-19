@@ -1,5 +1,3 @@
-Gitlab deployment
-
 # seeyouspacecow-node
 node (w/ express) application version of my portfolio website
 
