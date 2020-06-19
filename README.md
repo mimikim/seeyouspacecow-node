@@ -55,10 +55,11 @@ Files excluded are:
 
 Updates to come:
 
-- a fancy email template to be sent for when people actually use the contact form to contact me! :sob: :joy:
+- a fancy email template to be sent for when people actually use the contact form to contact me
 
 ## Release Notes: 
 
+- **v1.2** Introducing a "Featured" portfolio item tag which will allow me to mark certain portfolio items at the top of the alphabetical list
 - **v1.1.4** Improved carousel in mobile, new sprite animations
 - **v1.1.2** Introducing new 404 error page, css print styles, updating package dependency versions, slightly refactored Grunt setup, misc cleanups
 - **v1.0.0** Node version released!!

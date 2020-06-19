@@ -91,26 +91,37 @@ export class PortfolioLoader {
     promise.then( response => {
       this.container_div.innerHTML = '';
 
-      JSON.parse( response ).forEach( ( { name, url, thumb, folder } ) => {
-        let element = document.createElement('a');
+      JSON.parse( response ).forEach( ( { name, url, thumb, folder, feature } ) => {
+        let element = document.createElement( 'a' );
+        let figure = document.createElement( 'figure' );
+        let imgElm = document.createElement( 'img' );
+        let figcaption = document.createElement( 'figcaption' );
+
+        // <a> tag
         element.href = '/portfolio/' + url + '/';
         element.classList.add( 'item', 'fade-in' );
         element.setAttribute( 'tabindex', 0 );
 
-        let imgElm = document.createElement('img');
+        // <img>
         imgElm.src = '/img/placeholder.png';
         imgElm.classList.add( 'responsive', 'lazyload' );
         imgElm.dataset.src = `/img/portfolio/${folder}/${thumb}`;
         imgElm.setAttribute( 'alt', 'portfolio thumbnail picture for ' + name );
 
-        let figure = document.createElement('figure');
-
-        let figcaption = document.createElement('figcaption');
+        // <figcaption>
         figcaption.innerText = name;
 
         figure.insertAdjacentElement( 'afterbegin', imgElm );
         figure.insertAdjacentElement( 'beforeend', figcaption );
         element.insertAdjacentElement( 'afterbegin', figure );
+
+        // if "Featured", create element and put it before img
+        if ( feature ) {
+          let feature = document.createElement('div');
+          feature.classList.add( 'featured-portfolio' );
+          feature.innerText = 'Featured Item';
+          figure.insertAdjacentElement( 'beforebegin', feature );
+        }
 
         this.container_div.insertAdjacentElement( 'beforeend', element );
       } );

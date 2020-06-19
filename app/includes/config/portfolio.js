@@ -5,12 +5,19 @@ const path = require('path');
 const files = fs.readdirSync( path.join(__dirname, '/portfolio-items/') );
 
 let data = [];
+let featured = [];
 
 // for each file in directory, push into data array
 files.forEach( file => {
     let name = file.replace('.js', '');
-    data.push( require( './portfolio-items/' + name ) );
+    let item = require( './portfolio-items/' + name );
+
+    if ( item.feature ) {
+      featured.push( item );
+    } else {
+      data.push( item );
+    }
   }
 );
 
-module.exports = data;
+module.exports = featured.concat( data );

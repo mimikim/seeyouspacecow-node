@@ -1,6 +1,9 @@
 <a href="/portfolio/{{url}}/" class="item" tabindex="0">
-  <figure>
-    <img src="/img/placeholder.png" class="responsive lazyload" data-src="/img/portfolio/{{folder}}/{{thumb}}" alt="Thumbnail picture for {{name}}">
-    <figcaption>{{name}}</figcaption>
-  </figure>
+    <figure>
+        {{#with feature}}
+            <div class="featured-portfolio">Featured Item</div>
+        {{/with}}
+        <img src="/img/placeholder.png" class="responsive lazyload" data-src="/img/portfolio/{{folder}}/{{thumb}}" alt="Thumbnail picture for {{name}}">
+        <figcaption>{{name}}</figcaption>
+    </figure>
 </a>
