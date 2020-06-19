@@ -11,7 +11,10 @@ router.post( '/endpoint/carousel', function( req, res ) {
   let slides = [];
 
   files.forEach( image => {
-    slides.push( `<img src="/img/portfolio/${folder}/slides/${image}">` );
+    // ignores .DS_Store for Macs
+    if ( '.DS_Store' !== image ) {
+      slides.push( `<img src="/img/portfolio/${folder}/slides/${image}">` );
+    }
   });
 
   res.send( slides );
