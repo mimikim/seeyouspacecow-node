@@ -4,18 +4,9 @@
 
     <nav class="category-navigation" id="js-portfolio-filters">
         <span class="category-filters">Filters:</span>
-        <button class="button" data-type="javascript" data-track data-category="Category Filter" data-action="Clicked Filter" data-label="JavaScript">JavaScript</button>
-        <button class="button" data-type="html" data-track data-category="Category Filter" data-action="Clicked Filter" data-label="HTML">HTML</button>
-        <button class="button" data-type="css" data-track data-category="Category Filter" data-action="Clicked Filter" data-label="CSS">CSS</button>
-        <button class="button" data-type="php" data-track data-category="Category Filter" data-action="Clicked Filter" data-label="PHP">PHP</button>
-        <button class="button" data-type="nodejs" data-track data-category="Category Filter" data-action="Clicked Filter" data-label="NodeJS">NodeJS</button>
-        <button class="button" data-type="reactjs" data-track data-category="Category Filter" data-action="Clicked Filter" data-label="ReactJS">ReactJS</button>
-        <button class="button" data-type="angular" data-track data-category="Category Filter" data-action="Clicked Filter" data-label="Angular">Angular</button>
-        <button class="button" data-type="wordpress" data-track data-category="Category Filter" data-action="Clicked Filter" data-label="WordPress">WordPress</button>
-        <button class="button" data-type="canvas" data-track data-category="Category Filter" data-action="Clicked Filter" data-label="Canvas">Canvas</button>
-        <button class="button" data-type="static" data-track data-category="Category Filter" data-action="Clicked Filter" data-label="Static Site">Static Site</button>
-        <button class="button" data-type="email" data-track data-category="Category Filter" data-action="Clicked Filter" data-label="HTML Email">HTML Email</button>
-        <button class="button" data-type="project" data-track data-category="Category Filter" data-action="Clicked Filter" data-label="Projects">Personal</button>
+        {{#each filters}}
+            {{> filter-button}}
+        {{/each}}
     </nav>
 
     <button id="js-reset" class="button category-reset" data-track data-category="Category Filter" data-action="Reset Filters" data-label="">Reset All Filters</button>

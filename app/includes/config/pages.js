@@ -13,7 +13,8 @@ module.exports = {
     class: 'portfolio',
     hasScript: true,
     hasStyle: true,
-    portfolioThumbs: require('./portfolio')
+    portfolioThumbs: require('./portfolio'),
+    filters: require('./filters')
   },
   'about': {
     title: 'About',
