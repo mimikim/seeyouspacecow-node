@@ -51,27 +51,32 @@ export class Carousel {
     let count = this.slides.length;
     this.load_slide( this.currentIndex );
 
-    this.prev.addEventListener( 'click', () => {
-      // if current index == 0, previous element loops back to length
-      if( this.currentIndex === 0 ) {
-        this.currentIndex = ( count - 1 );
-      } else {
-        this.currentIndex--;
-      }
+    if ( count > 1 ) {
+      this.prev.addEventListener( 'click', () => {
+        // if current index == 0, previous element loops back to length
+        if( this.currentIndex === 0 ) {
+          this.currentIndex = ( count - 1 );
+        } else {
+          this.currentIndex--;
+        }
 
-      this.load_slide( this.currentIndex );
-    });
+        this.load_slide( this.currentIndex );
+      });
 
-    this.next.addEventListener( 'click', () => {
-      // if current index == length, next is 0
-      if( this.currentIndex === ( count - 1 ) ) {
-        this.currentIndex = 0;
-      } else {
-        this.currentIndex++;
-      }
+      this.next.addEventListener( 'click', () => {
+        // if current index == length, next is 0
+        if( this.currentIndex === ( count - 1 ) ) {
+          this.currentIndex = 0;
+        } else {
+          this.currentIndex++;
+        }
 
-      this.load_slide( this.currentIndex );
-    });
+        this.load_slide( this.currentIndex );
+      });
+
+    } else {
+      document.getElementById( 'controls' ).innerHTML = '';
+    }
   }
 
   load_slide( index ) {
