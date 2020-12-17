@@ -2,7 +2,6 @@ const cssPath = require('../config').returnCSS();
 const options = {
   dist: {
     options: {
-      sourcemap: 'none',
       style: 'compressed'
     },
     files: {}
