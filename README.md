@@ -57,6 +57,7 @@ Updates to come:
 
 ## Release Notes: 
 
+- **v1.2.3** Adding encoded svg SASS function, fixing lazy loading JS
 - **v1.2.2** Portfolio filters stored in an array of objects and using a handlebars partial to generate the markup
 - **v1.2** Introducing a "Featured" portfolio item tag which will allow me to mark certain portfolio items at the top of the alphabetical list
 - **v1.1.4** Improved carousel in mobile, new sprite animations

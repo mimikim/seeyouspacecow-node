@@ -3,14 +3,15 @@
 
 // globals
 @import 'global/fonts';
-@import 'global/icon-font';
 @import 'global/variables';
 @import 'global/animations';
 @import 'global/typography';
 @import 'global/utility';
 @import 'global/mixins';
+@import 'global/functions';
 
 // components
+@import 'components/icons';
 @import 'components/buttons';
 @import 'components/header';
 @import 'components/footer';

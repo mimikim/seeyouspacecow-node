@@ -1,0 +1,15 @@
+[class*=" icon-"]::before,
+[class^="icon-"]::before {
+  content: '';
+  display: inline-block;
+  height: 30px;
+  margin-left: 5px;
+  margin-right: 5px;
+  position: relative;
+  top: 7px;
+  width: 30px;
+}
+
+.icon-github::before {
+  background: url( encoded_icon( 'github', $white ) ) 50%/contain no-repeat;
+}

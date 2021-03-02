@@ -14,10 +14,12 @@ export class LazyLoad {
 
     this.lazyLoad();
 
-    document.addEventListener( 'scroll', () => { this.lazyLoad(); } );
-    window.addEventListener( 'resize', () => { this.lazyLoad(); } );
-    window.addEventListener( 'orientationchange', () => { this.lazyLoad(); } );
+    document.addEventListener( 'scroll', this.handler );
   }
+
+  handler = () => {
+    this.lazyLoad();
+  };
 
   lazyLoad() {
     if ( this.active === false ) {
@@ -28,27 +30,20 @@ export class LazyLoad {
           let isInView = ( lazyImage.getBoundingClientRect().top <= window.innerHeight && lazyImage.getBoundingClientRect().bottom >= 0 );
 
           if ( isInView && getComputedStyle( lazyImage ).display !== 'none' ) {
-
-            // set proper url to image
             lazyImage.src = lazyImage.dataset.src;
             lazyImage.classList.remove( 'lazyload' );
 
-            this.images = this.images.filter( function( image ) {
+            this.images = this.images.filter( image => {
               return image !== lazyImage;
             });
 
             if ( this.images.length === 0 ) {
-              this.lazyLoad();
-
-              document.removeEventListener( 'scroll', () => { this.lazyLoad(); } );
-              window.removeEventListener( 'resize', () => { this.lazyLoad(); } );
-              window.removeEventListener( 'orientationchange', () => { this.lazyLoad(); } );
+              document.removeEventListener( 'scroll', this.handler );
             }
           }
         });
 
         this.active = false;
-
       }, 200 );
     }
   };
