@@ -6,9 +6,7 @@ import {Starfield} from "./modules/animation-starfield";
 ( () => {
   const animatedCow = document.getElementById( 'cow-animated' );
   if ( animatedCow !== undefined ) {
-    animatedCow.addEventListener( 'load', () => {
-      new Cow();
-    }, false );
+    new Cow();
   }
 
   new Starfield;
