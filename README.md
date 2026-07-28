@@ -1,7 +1,7 @@
 # seeyouspacecow-node
 node (w/ express) application version of my portfolio website
 
-[seeyouspacecow.com](https://seeyouspacecow.com)
+[seeyouspacecow.com](http://seeyouspacecow.com)
 
 es6 js, sass, nodejs, express, handlebars, grunt, bower, npm
 
